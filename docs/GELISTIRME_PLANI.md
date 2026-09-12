@@ -650,6 +650,28 @@ Yeni eklenen bölümlerde mevcut sitenin hero, kamp kartları, Services ve Conta
 7. Sarıkamış blog ve Footer animasyonlarını ekle.
 8. Mobil, tablet, desktop ve reduced-motion testlerini çalıştır.
 
+### 11.10. Kamp detay sayfası animasyonu
+
+**Dosya:** `src/Components/CampDetail/CampDetail.tsx`
+
+**Uygulama:**
+
+- Kamp görseli `fadeInLeft` ile giriş yapacak.
+- Tarih, lokasyon, başlık ve açıklama `fadeInRight`/`fadeInUp` ile sırayla görünecek.
+- Telefon, WhatsApp ve Instagram rezervasyon alanı gecikmeli `fadeInUp` ile gelecek.
+- Fiyat tablosu `fadeInUp` ile görünecek.
+- Sekme alanı `fadeInUp` ile giriş yapacak.
+- Eğitim programındaki gün tabloları sırayla `fadeInLeft` ile görünecek.
+- Eğitim ve kayak merkezi bilgi kartları sırayla `fadeInUp` ile görünecek.
+- Tüm detay sayfası animasyonları `animateOnce={false}` ile tekrar çalışacak.
+
+**Kabul kriterleri:**
+
+- Kamp detayının ilk ekranı mobilde taşmamalı.
+- Tablo satırları geçerli HTML tablo yapısını korumalı.
+- Sekme değişimleri ve fiyat/rezervasyon bilgileri animasyon nedeniyle erişilemez hale gelmemeli.
+- Sayfadan çıkıp geri dönüp tekrar scroll edildiğinde giriş animasyonları yeniden oynatılmalı.
+
 ## 10. Açık Kararlar
 
 Geliştirmeye başlamadan önce aşağıdaki kararlar alınmalı:

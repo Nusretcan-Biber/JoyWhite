@@ -11,6 +11,7 @@ import './CampDetail.css';
 import { faSnowflake, faSkiing, faPhone, faChild } from "@fortawesome/free-solid-svg-icons";
 import { faInstagram, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { faCreditCard, faUsers } from "@fortawesome/free-solid-svg-icons";
+import ScrollAnimation from "react-animate-on-scroll";
 
 const CampDetail = () => {
   const { id } = useParams();
@@ -70,21 +71,29 @@ const CampDetail = () => {
         <section className="text-gray-600 body-font overflow-hidden mt-24">
           <div className="sm:h-full container px-5 my-28 mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
-              <div className="campdetail-img lg:col-span-6">
+              <ScrollAnimation animateIn="fadeInLeft" animateOnce={false} className="lg:col-span-6">
+              <div className="campdetail-img">
                 <img
                   alt={camp.name}
                   src={camp.cover} // Kampın kapak resmini buradan alıyoruz
                 />
               </div>
-              <div className="lg:col-span-6 flex flex-col items-start gap-4 justify-center">
+              </ScrollAnimation>
+              <ScrollAnimation animateIn="fadeInRight" animateOnce={false} delay={140} className="lg:col-span-6">
+              <div className="flex flex-col items-start gap-4 justify-center">
+                <ScrollAnimation animateIn="fadeInUp" animateOnce={false} delay={120}>
                 <div>
                   <h2 className="campdetail-subtitle">{camp.BeginDate} - {camp.EndDate}</h2>
                   <h2 className="campdetail-subtitle">{camp.Location}</h2>
                   <h1 className="campdetail-title">{camp.name}</h1>
                 </div>
+                </ScrollAnimation>
 
+                <ScrollAnimation animateIn="fadeInUp" animateOnce={false} delay={180}>
                 <p className="leading-relaxed">{camp.description}</p>
+                </ScrollAnimation>
 
+                <ScrollAnimation animateIn="fadeInUp" animateOnce={false} delay={240}>
                 <div className="reach-out">
                   <h3 className="text-PrimaryColor font-bold">Bilgi ve Rezervasyon:</h3>
                   <div className="reach-out-buttons">
@@ -102,7 +111,9 @@ const CampDetail = () => {
                     </a>
                   </div>
                 </div>
+                </ScrollAnimation>
 
+                <ScrollAnimation animateIn="fadeInUp" animateOnce={false} delay={300} className="w-full">
                 <Table>
                   <Table.Head>
                     <Table.HeadCell>Katılımcı</Table.HeadCell>
@@ -117,10 +128,13 @@ const CampDetail = () => {
                     ))}
                   </Table.Body>
                 </Table>
+                </ScrollAnimation>
 
               </div>
+              </ScrollAnimation>
             </div>
-            <div className="mt-24">
+            <ScrollAnimation animateIn="fadeInUp" animateOnce={false} className="mt-24">
+            <div>
               <Tabs className="detail-tabs" variant="fullWidth">
                 <Tabs.Item active title="Açıklama" icon={HiUserCircle}>
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -244,6 +258,7 @@ const CampDetail = () => {
                 <Tabs.Item title="Eğitim Programı" icon={MdDashboard}>
                   <div className="mx-auto max-w-3xl mt-10">
                     {scheduleData.map((day, index) => (
+                      <ScrollAnimation animateIn="fadeInLeft" animateOnce={false} delay={index * 100} key={day.title}>
                       <div key={index} className="mb-10">
                         <Table>
                           <Table.Head>
@@ -260,10 +275,12 @@ const CampDetail = () => {
                           </Table.Body>
                         </Table>
                       </div>
+                      </ScrollAnimation>
                     ))}
                   </div>
                 </Tabs.Item>
                 <Tabs.Item title="Eğitim ve Kayak Merkezi" icon={HiAdjustments}>
+                  <ScrollAnimation animateIn="fadeInUp" animateOnce={false}>
                   <Card>
                     <h2 className="text-PrimaryColor font-bold text-lg">Eğitim</h2>
                     <ListGroup>
@@ -284,8 +301,10 @@ const CampDetail = () => {
                       </ListGroup.Item>
                     </ListGroup>
                   </Card>
+                  </ScrollAnimation>
 
                   {/* Sarıkamış Pistleri Kartı */}
+                  <ScrollAnimation animateIn="fadeInUp" animateOnce={false} delay={140}>
                   <Card className="mt-4">
                     <h2 className="text-PrimaryColor font-bold text-lg">Sarıkamış Pistleri Hakkında</h2>
                     <ListGroup>
@@ -303,10 +322,12 @@ const CampDetail = () => {
                       </ListGroup.Item>
                     </ListGroup>
                   </Card>
+                  </ScrollAnimation>
                 </Tabs.Item>
                 
               </Tabs>
             </div>
+            </ScrollAnimation>
           </div>
         </section >
       </div >
