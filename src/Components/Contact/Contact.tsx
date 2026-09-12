@@ -9,7 +9,7 @@ const Contact = () => {
         <ScrollAnimation animateIn="fadeInDown" animateOnce={false}>
           <h2 className="text-3xl font-semibold text-center text-gray-800 capitalize lg:text-4xl dark:text-white">
             Hakkımızda
-          </h1>
+          </h2>
 
           <div className="flex justify-center mx-auto mt-6">
             <span className="inline-block w-40 h-1 bg-blue-500 rounded-full"></span>
@@ -41,7 +41,7 @@ const Contact = () => {
             <ScrollAnimation animateIn="fadeInRight" animateOnce={false}>
               <h2 className="text-4xl font-semibold text-gray-700 capitalize dark:text-white">
                 JoyWhite Kayak Kulübü
-              </h1>
+              </h2>
 
               <p className="mt-4 text-gray-600 dark:text-gray-300">
                 Kayak eğitimi alanında uzmanlaşmış ekibimiz, çocuklarınızın

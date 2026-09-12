@@ -11,7 +11,7 @@ const CampsComponent = () => {
         <div className="container px-6 py-10 mx-auto">
           <h2 className="text-3xl font-semibold text-center text-gray-800 capitalize lg:text-4xl dark:text-white">
             Eğitimlerimiz
-          </h1>
+          </h2>
           <div className="flex justify-center mx-auto mt-6">
             <span className="inline-block w-40 h-1 bg-blue-500 rounded-full"></span>
             <span className="inline-block w-3 h-1 mx-1 bg-blue-500 rounded-full"></span>
