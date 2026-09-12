@@ -29,6 +29,7 @@
 
 div[data-testid="table-element"] {
     width: 100% !important;
+    overflow-x: auto;
 }
 
 .reach-out {
@@ -95,6 +96,57 @@ div[data-testid="table-element"] {
 
 .reach-out-button:hover span {
     opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .campdetail-img {
+        aspect-ratio: 16 / 10;
+    }
+
+    .campdetail-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .campdetail-title {
+        font-size: clamp(1.8rem, 9vw, 2.5rem);
+        line-height: 1.1;
+    }
+
+    .reach-out {
+        align-items: flex-start;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .reach-out-buttons {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .reach-out-button {
+        width: 50px;
+        flex: 0 0 50px;
+    }
+
+    .reach-out-button:hover {
+        width: 50px;
+    }
+
+    .reach-out-button span {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .campdetail-img {
+        aspect-ratio: 4 / 3;
+    }
+
+    .detail-tabs div[role='tablist'] button {
+        min-height: 3rem;
+        padding: 0.65rem 0.5rem;
+        font-size: 0.8rem;
+    }
 }
 
   

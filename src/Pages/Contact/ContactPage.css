@@ -52,7 +52,7 @@
 }
 
 .contact-text {
-    font-size: 1.2rem;
+    font-size: clamp(0.95rem, 2vw, 1.2rem);
     color: var(--primary-color);
     text-transform: capitalize;
     width: fit-content;
@@ -125,4 +125,44 @@
     color: #000;
     background-color: var(--secondary-color);
     border: 1px solid var(--primary-color);
+}
+
+@media (max-width: 768px) {
+    .contact-section {
+        padding-top: 4rem;
+    }
+
+    .contact-info {
+        gap: 1.5rem;
+    }
+
+    .contact-item {
+        grid-template-columns: 38px minmax(0, 1fr);
+        gap: 1rem;
+    }
+
+    .contact-icon {
+        font-size: 1.35rem;
+        height: 30px;
+        padding: 0.55rem;
+    }
+
+    .contact-text {
+        overflow-wrap: anywhere;
+    }
+
+    .contact-map {
+        height: 18rem;
+        margin-top: 4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-title {
+        font-size: 1.6rem;
+    }
+
+    .contact-form {
+        min-width: 0;
+    }
 }

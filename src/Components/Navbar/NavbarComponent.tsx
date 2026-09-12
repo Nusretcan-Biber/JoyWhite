@@ -40,7 +40,7 @@ export function NavbarComponent({ useScrolled = false }) {
           <img
             src="/images/staticImages/joywhite-logo.png"
             alt="JoyWhite Kayak Kulübü"
-            className={` mr-2  ${isScrolled ? "h-20" : "h-32"}   `}
+            className={`mr-2 ${isScrolled ? "h-16 md:h-20" : "h-20 md:h-32"}`}
           />
           <span className={`nav-logo-text font-bold ${isScrolled ? "text-black" : "text-white hidden"
             }`}>

@@ -7,6 +7,12 @@
 
 body {
   font-family: "Montserrat", sans-serif;
+  overflow-x: hidden;
+}
+
+img,
+iframe {
+  max-width: 100%;
 }
 
 code {
@@ -126,10 +132,17 @@ a:active {
 }
 
 .photohero-section-name {
-  font-size: 3rem;
+  font-size: clamp(2rem, 7vw, 3rem);
   font-weight: 600;
   color: var(--secondary-color);
   text-shadow: -4px 4px 10px var(--primary-color);
+  line-height: 1.1;
+}
+
+@media (max-width: 480px) {
+  .photohero-section-name {
+    padding: 0 1rem;
+  }
 }
 
 @keyframes fadeIn {

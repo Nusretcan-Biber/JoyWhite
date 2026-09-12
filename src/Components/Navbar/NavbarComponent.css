@@ -6,7 +6,17 @@
 }
 
 @media screen and (max-width: 768px) {
-  .navbar {
-      display: none;
+  .nav-logo-text {
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+  }
+
+  nav[class*="h-24"] {
+    min-height: 4.5rem;
+    padding-top: 0.5rem;
+  }
+
+  nav[class*="h-24"] > div {
+    width: 100%;
   }
 }
