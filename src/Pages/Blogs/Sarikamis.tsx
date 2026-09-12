@@ -19,8 +19,8 @@ const Sarikamis = () => {
 
               <div className="blog-img">
                 <img
-                  src="/images/staticImages/hero-3.jpg"
-                  alt="Çocuklar için kayak eğitimi"
+                  src="/images/staticImages/sarikamis-test.jpg"
+                  alt="Sarıkamış'ta karla kaplı sarıçam ormanları"
                   className="h-64 object-cover text-center shadow-md"
                 />
               </div>
