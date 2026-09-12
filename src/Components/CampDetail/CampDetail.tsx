@@ -258,8 +258,7 @@ const CampDetail = () => {
                 <Tabs.Item title="Eğitim Programı" icon={MdDashboard}>
                   <div className="mx-auto max-w-3xl mt-10">
                     {scheduleData.map((day, index) => (
-                      <ScrollAnimation animateIn="fadeInLeft" animateOnce={false} delay={index * 100} key={day.title}>
-                      <div key={index} className="mb-10">
+                      <div key={day.title} className="mb-10 campdetail-schedule-day" style={{ animationDelay: `${index * 100}ms` }}>
                         <Table>
                           <Table.Head>
                               <Table.HeadCell className="w-40">{day.title}</Table.HeadCell>
@@ -275,12 +274,10 @@ const CampDetail = () => {
                           </Table.Body>
                         </Table>
                       </div>
-                      </ScrollAnimation>
                     ))}
                   </div>
                 </Tabs.Item>
                 <Tabs.Item title="Eğitim ve Kayak Merkezi" icon={HiAdjustments}>
-                  <ScrollAnimation animateIn="fadeInUp" animateOnce={false}>
                   <Card>
                     <h2 className="text-PrimaryColor font-bold text-lg">Eğitim</h2>
                     <ListGroup>
@@ -301,10 +298,8 @@ const CampDetail = () => {
                       </ListGroup.Item>
                     </ListGroup>
                   </Card>
-                  </ScrollAnimation>
 
                   {/* Sarıkamış Pistleri Kartı */}
-                  <ScrollAnimation animateIn="fadeInUp" animateOnce={false} delay={140}>
                   <Card className="mt-4">
                     <h2 className="text-PrimaryColor font-bold text-lg">Sarıkamış Pistleri Hakkında</h2>
                     <ListGroup>
@@ -322,7 +317,6 @@ const CampDetail = () => {
                       </ListGroup.Item>
                     </ListGroup>
                   </Card>
-                  </ScrollAnimation>
                 </Tabs.Item>
                 
               </Tabs>
