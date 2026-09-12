@@ -1,0 +1,14 @@
+.parallax-bg {
+    background-image: url(../../../public/images/staticImages/photo-hero.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@supports (-webkit-touch-callout: none) {
+    /* iOS özelinde */
+    .parallax-bg {
+      background-attachment: scroll;
+    }
+  }

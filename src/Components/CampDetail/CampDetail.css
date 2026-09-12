@@ -1,0 +1,100 @@
+.campdetail-img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.campdetail-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.campdetail-subtitle {
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #aaa;
+}
+
+.campdetail-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    transition: all .2s;
+    color: #000;
+}
+
+div[data-testid="table-element"] {
+    width: 100% !important;
+}
+
+.reach-out {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+@media (max-width: 425px) {
+    .reach-out {
+        flex-direction: column;
+    }
+}
+
+.reach-out-buttons {
+    display: flex;
+    gap: .7rem;
+}
+
+.reach-out-button {
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    gap: .5rem;
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+    padding: 0 1rem;
+    white-space: nowrap; 
+    overflow: hidden;
+    background-color: #f0f0f0;
+    position: relative;
+    transition: all .3s;
+}
+
+.reach-out-icon {
+    color: #000;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    transition: all .3s;
+}
+
+.reach-out-button span {
+    color: #fff;
+    opacity: 0;
+    transition: all .3s;
+}
+
+.reach-out-button:hover {
+    justify-content: center;
+    width: 150px;
+    background-color: #000;
+}
+
+.reach-out-button:hover .reach-out-icon {
+    color: #fff;
+}
+
+.reach-out-button:hover span {
+    opacity: 1;
+}
+
+  

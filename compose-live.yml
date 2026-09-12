@@ -1,0 +1,17 @@
+version: '3'
+services:
+  joywhite365-web:
+    image: sercanezelhan/joywhite365:dev
+    ports:
+      - "18000:80"
+
+  nginx:
+    image: nginx:alpine
+    container_name: nginx
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:Z
+      - ./joywhite365.crt:/etc/ssl/private/cert.crt:Z
+      - ./joywhite365.key:/etc/ssl/private/key.key:Z
+    ports:
+      - '80:80'
+      - '443:443'
