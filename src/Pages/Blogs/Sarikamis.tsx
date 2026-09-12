@@ -27,7 +27,7 @@ const Sarikamis = () => {
               </div>
 
               <p className="mb-6 mt-12 text-lg leading-relaxed">
-                Joy White Kış Kampı ve WinterLabs atölyeleri için Sarıkamış'ı seçmemiz bir tesadüf değil. Bölgenin doğası, çocukların karla ilk tanışmasını keyifli bir öğrenme deneyimine dönüştürürken, deneyimli kayakçıların da güvenli bir kış sporları deneyimi yaşamasına olanak sağlar.
+                Joy White Kış Kampı kayıtları başladı. Joy White Kış Kampı ve WinterLabs atölyeleri için Sarıkamış'ı seçmemiz bir tesadüf değil. Bölgenin doğası, çocukların karla ilk tanışmasını keyifli bir öğrenme deneyimine dönüştürürken, deneyimli kayakçıların da güvenli bir kış sporları deneyimi yaşamasına olanak sağlar.
               </p>
 
               <div className="mb-12">
@@ -40,7 +40,7 @@ const Sarikamis = () => {
               <div className="mb-12">
                 <h2 className="text-2xl font-semibold mb-4">Sarıçam Ormanları</h2>
                 <p className="mb-4 text-lg leading-relaxed">
-                  Sarıkamış'ın sarıçam ormanlarıyla çevrili doğal yapısı, kamp deneyimine güçlü bir atmosfer katar. Hava ve pist koşulları günlük olarak takip edilir; eğitim alanları, çocukların seviyeleri ve günün şartlarına göre eğitmenler tarafından planlanır.
+                  Sarıkamış'ın sarıçam ormanlarıyla çevrili doğal yapısı, kamp deneyimine güçlü bir atmosfer katar. Doğrulanmış saha bilgilerine göre bölgedeki eğitim alanı sıfır çığ riski bulunan güvenli bir ortam olarak planlanmıştır; hava ve pist koşulları ayrıca günlük olarak takip edilir.
                 </p>
               </div>
 

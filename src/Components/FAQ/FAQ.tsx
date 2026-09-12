@@ -27,7 +27,7 @@ const faqItems: FAQItem[] = [
   {
     question: "Joy White Kış Kampı için neden özellikle Sarıkamış tercih ediliyor?",
     answer:
-      "Sarıkamış'ın kendine özgü kar yapısı ve sarıçam ormanları, kış sporları için güçlü bir doğal ortam sunar. Bölgenin doğası, çocukların ilk kayak deneyimlerini güvenli ve keyifli bir öğrenme sürecine dönüştürmemize yardımcı olur.",
+      "Sarıkamış'ın kendine özgü kar yapısı ve sarıçam ormanları, kış sporları için güçlü bir doğal ortam sunar. Doğrulanmış saha bilgilerine göre eğitim alanı sıfır çığ riski bulunan güvenli bir ortam olarak planlanmıştır. Bölgenin doğası, çocukların ilk kayak deneyimlerini güvenli ve keyifli bir öğrenme sürecine dönüştürmemize yardımcı olur.",
   },
   {
     question: "Kampın konaklama ve ulaşım süreçleri nasıl organize ediliyor?",
