@@ -1,10 +1,12 @@
 import React from "react";
+import ScrollAnimation from "react-animate-on-scroll";
 import "./AboutVision.css";
 
 const AboutVision = () => {
   return (
     <section className="about-vision" aria-labelledby="about-vision-title">
       <div className="about-vision__inner">
+        <ScrollAnimation animateIn="fadeInLeft" animateOnce={true}>
         <div className="about-vision__content">
           <p className="section-kicker">Joy White Kayak Kulübü</p>
           <h2 id="about-vision-title">Biz Kimiz &amp; Pedagojik Vizyonumuz</h2>
@@ -24,6 +26,8 @@ const AboutVision = () => {
             </p>
           </div>
         </div>
+        </ScrollAnimation>
+        <ScrollAnimation animateIn="fadeInRight" animateOnce={true} delay={160}>
         <div className="about-vision__media">
           <img
             src="/images/staticImages/parallax-1.jpg"
@@ -33,6 +37,7 @@ const AboutVision = () => {
             Güvenli öğrenme, yaratıcı düşünme ve doğayla bağ kurma
           </div>
         </div>
+        </ScrollAnimation>
       </div>
     </section>
   );

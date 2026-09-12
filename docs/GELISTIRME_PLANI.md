@@ -442,12 +442,12 @@ Mevcut dosya yolları başka yerlerde kullanılıyorsa dosyalar doğrudan taşı
 
 ### Fonksiyonel
 
-- [ ] SSS accordion açılıp kapanıyor.
-- [ ] Navbar bağlantıları doğru sayfalara gidiyor.
-- [ ] Browser yenilemesinde route'lar Nginx altında çalışıyor.
-- [ ] Dış bağlantılar yeni sekmede açılıyor.
-- [ ] İletişim formu çalışmaya devam ediyor.
-- [ ] Kamp kartları ve detay sayfaları çalışıyor.
+- [x] SSS accordion açılıp kapanıyor.
+- [x] Navbar bağlantıları doğru sayfalara gidiyor.
+- [x] Browser yenilemesinde route'lar Nginx altında çalışıyor.
+- [x] Dış bağlantılar yeni sekmede açılıyor.
+- [x] İletişim formu çalışmaya devam ediyor.
+- [x] Kamp kartları ve detay sayfaları çalışıyor.
 
 ### Teknik
 
@@ -455,7 +455,199 @@ Mevcut dosya yolları başka yerlerde kullanılıyorsa dosyalar doğrudan taşı
 - [ ] TypeScript/ESLint hataları yok veya bilinçli olarak belgelenmiş.
 - [ ] Browser console hataları yok.
 - [ ] Docker build başarılı; bu makinede Docker komutu bulunmuyor.
-- [ ] Masaüstü ve mobil görünüm kontrol edildi.
+- [x] Masaüstü, tablet ve mobil görünüm kontrol edildi; yatay taşma bulunmadı.
+
+### Animasyon
+
+- [x] SSS başlık ve soru satırlarına scroll animasyonu eklendi.
+- [x] SSS cevap açılımına yükseklik/opaklık geçişi eklendi.
+- [x] Vizyon bölümüne karşılıklı giriş animasyonları eklendi.
+- [x] WinterCamp kartlarına stagger, hover yükselme ve görsel zoom eklendi.
+- [x] Kids Kamp kutularına karşılıklı giriş ve ikon hover geçişi eklendi.
+- [x] Günlük program satırlarına sıralı giriş ve hover ayraç geçişi eklendi.
+- [x] `prefers-reduced-motion` desteği eklendi.
+- [x] Mobil ve desktop animasyon taşması kontrol edildi.
+
+## 11. Animasyon Geliştirme Planı
+
+Yeni eklenen bölümlerde mevcut sitenin hero, kamp kartları, Services ve Contact bölümlerindeki hareket diliyle uyumlu, ölçülü scroll ve hover animasyonları kullanılacaktır. Amaç her bölümü hareketli yapmak değil; içeriğin sırayla keşfedilmesini kolaylaştırmak ve sayfaya ritim kazandırmaktır.
+
+### 11.1. Ortak animasyon standardı
+
+- Mevcut `react-animate-on-scroll` kütüphanesi kullanılacak.
+- Scroll animasyonları `animateOnce={true}` ile yalnızca ilk görünüşte çalışacak.
+- Giriş animasyonlarının süresi genel olarak `0.5s - 0.8s` arasında tutulacak.
+- Kart ve liste elemanlarında stagger gecikmesi `0.08s - 0.15s` aralığında uygulanacak.
+- Mobilde aynı animasyonlar korunacak, ancak mesafe ve süre azaltılacak.
+- Sürekli dönen veya dikkat dağıtan animasyon kullanılmayacak.
+- `prefers-reduced-motion` desteği eklenerek hareket azaltma tercihi olan kullanıcılar korunacak.
+
+Önerilen ortak CSS:
+
+```css
+@media (prefers-reduced-motion: reduce) {
+   *,
+   *::before,
+   *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+   }
+}
+```
+
+### 11.2. SSS animasyonu
+
+**Dosyalar:**
+
+- `src/Components/FAQ/FAQ.tsx`
+- `src/Components/FAQ/FAQ.css`
+
+**Uygulama:**
+
+- SSS başlığı ve açıklaması `fadeInUp` ile görünecek.
+- Soru satırları sırayla `fadeInUp` ile gelecek.
+- Her satırda kısa stagger gecikmesi kullanılacak.
+- Açılır cevaplar yumuşak yükseklik/opaklık geçişiyle açılacak.
+- Mevcut chevron dönüşü korunacak.
+- `hidden` kullanımı animasyonu engelliyorsa panel görünürlüğü animasyonla uyumlu bir sınıf üzerinden yönetilecek.
+
+**Kabul kriterleri:**
+
+- Soru açılırken içerik zıplamamalı.
+- Aynı anda yalnızca seçilen soru açık kalmalı.
+- Klavye kullanımı ve `aria-expanded` davranışı bozulmamalı.
+- Mobilde uzun cevaplar taşmamalı.
+
+### 11.3. Biz Kimiz & Pedagojik Vizyonumuz animasyonu
+
+**Dosyalar:**
+
+- `src/Components/AboutVision/AboutVision.tsx`
+- `src/Components/AboutVision/AboutVision.css`
+
+**Uygulama:**
+
+- Sol metin alanı `fadeInLeft` ile görünecek.
+- Sağ görsel `fadeInRight` ile kısa gecikmeyle gelecek.
+- Görsel caption alanı hafif `fadeInUp` ile görünecek.
+- Görsel hover sırasında çok hafif `scale(1.03)` uygulanacak.
+
+**Kabul kriterleri:**
+
+- Görsel ve metin aynı anda yığılmadan görünmeli.
+- Mobilde tek kolon sırasına geçişte animasyonlar çakışmamalı.
+- Hover zoom görselin sınırlarını ve caption alanını bozmamalı.
+
+### 11.4. Kış Kampları ve WinterLabs animasyonu
+
+**Dosyalar:**
+
+- `src/Components/WinterCampContent/WinterCampContent.tsx`
+- `src/Components/WinterCampContent/WinterCampContent.css`
+
+**Uygulama:**
+
+- Bölüm başlığı `fadeInUp` ile gelecek.
+- Üç kart sırayla `fadeInUp` ile görünecek.
+- Kart gecikmeleri yaklaşık `0s`, `0.12s`, `0.24s` olacak.
+- Hover sırasında kart `translateY(-6px)` ile hafif yükselecek.
+- Kart görsellerine hafif zoom, ikonlara küçük scale geçişi eklenecek.
+
+**Kabul kriterleri:**
+
+- Kartlar aynı anda patlamadan sırayla görünmeli.
+- Hover animasyonu mobil dokunmatik düzende layout kaymasına neden olmamalı.
+- Kart görselleri animasyon sırasında taşmamalı.
+
+### 11.5. Kids Kamp İçerikleri animasyonu
+
+**Dosyalar:**
+
+- `src/Components/KidsCampContent/KidsCampContent.tsx`
+- `src/Components/KidsCampContent/KidsCampContent.css`
+
+**Uygulama:**
+
+- Başlık `fadeInUp` ile görünecek.
+- Dahil olanlar kutusu `fadeInLeft` ile gelecek.
+- Dahil olmayanlar kutusu `fadeInRight` ile gelecek.
+- Liste maddeleri kısa aralıklarla sırayla görünür olacak.
+- Check ve X ikonlarında küçük scale geçişi kullanılacak.
+
+**Kabul kriterleri:**
+
+- İki kutu masaüstünde karşılıklı, mobilde dikey ve okunabilir kalmalı.
+- Liste animasyonu metinlerin okunmasını geciktirmemeli.
+- İkon hareketleri içerik anlamını değiştirmemeli.
+
+### 11.6. Sarıkamış'ta Bir Gün animasyonu
+
+**Dosyalar:**
+
+- `src/Components/DailySchedule/DailySchedule.tsx`
+- `src/Components/DailySchedule/DailySchedule.css`
+
+**Uygulama:**
+
+- Bölüm başlığı `fadeInUp` ile gelecek.
+- Program satırları sırayla `fadeInLeft` ile görünecek.
+- Saat bilgisi önce, etkinlik metni hemen ardından görünecek.
+- Satır ayraçları genişleme geçişiyle desteklenebilecek.
+- Mobilde satırlar tek kolonda ve kısa mesafeli animasyonla çalışacak.
+
+**Kabul kriterleri:**
+
+- Günlük akış sıralı ve kolay takip edilir kalmalı.
+- Uzun etkinlik metinleri ekrandan taşmamalı.
+- Program animasyonu sayfa açılışını gereksiz yere geciktirmemeli.
+
+### 11.7. Sarıkamış blog sayfası animasyonu
+
+**Dosya:** `src/Pages/Blogs/Sarikamis.tsx`
+
+**Uygulama:**
+
+- Sayfa başlığı `fadeInDown`.
+- Ana görsel `fadeIn`.
+- İçerik blokları sırayla `fadeInUp`.
+- Blog aside masaüstünde `fadeInRight`.
+- Tüm animasyonlar bir kez çalışacak.
+
+**Kabul kriterleri:**
+
+- Fotoğraf kırpma konumu ve animasyon birlikte layout kayması oluşturmamalı.
+- Mobilde blog aside sticky kalmamalı ve içerikten sonra okunabilmeli.
+
+### 11.8. Footer animasyonu
+
+**Dosyalar:**
+
+- `src/Components/Footer/FooterComponent.tsx`
+- `src/Components/Footer/FooterComponent.css`
+
+**Uygulama:**
+
+- Footer bölümü hafif `fadeInUp` ile görünecek.
+- TÜRSAB/Pavone bilgi alanı kısa gecikmeyle görünecek.
+- Mevcut link hover geçişleri korunacak.
+
+**Kabul kriterleri:**
+
+- Footer linkleri ve yasal bilgiler animasyon beklemeden erişilebilir olmalı.
+- Mobil Footer kolonları animasyon sırasında üst üste binmemeli.
+
+### 11.9. Animasyon uygulama sırası
+
+1. Ortak `prefers-reduced-motion` kuralını ekle.
+2. SSS açılma/kapanma animasyonunu uygula.
+3. Vizyon bölümünde sol/sağ giriş animasyonlarını uygula.
+4. WinterCamp kartlarında stagger ve hover animasyonlarını uygula.
+5. Kids Kamp kutularına karşılıklı giriş animasyonu ekle.
+6. Günlük programa sıralı timeline animasyonu ekle.
+7. Sarıkamış blog ve Footer animasyonlarını ekle.
+8. Mobil, tablet, desktop ve reduced-motion testlerini çalıştır.
 
 ## 10. Açık Kararlar
 
@@ -469,14 +661,12 @@ Geliştirmeye başlamadan önce aşağıdaki kararlar alınmalı:
 6. Yeni logo ve Sarıkamış fotoğrafları ne zaman teslim edilecek?
 7. Yeni içerikler sadece Türkçe mi olacak, ileride İngilizce dil desteği planlanıyor mu?
 
-## 11. Kalan Uygulama İşleri
+## 12. Kalan Uygulama İşleri
 
 Geliştirme planının ana içerik işleri tamamlandı. Kalan işler:
 
-1. Yeni logo dosyalarını teslim alıp Navbar ve Footer'da değiştirmek.
-2. Doğrulanmış Sarıkamış fotoğrafını teslim alıp geçici görseli değiştirmek.
-3. Pavone sitesindeki kesin KVKK, sözleşme ve ödeme URL'lerini eklemek.
-4. Masaüstü, tablet ve mobil testlerini tamamlamak.
-5. Docker build ve yayın öncesi son kontrolleri tamamlamak.
+1. Doğrulanmış Sarıkamış fotoğrafını teslim alıp geçici görseli değiştirmek.
+2. Pavone sitesindeki kesin KVKK, sözleşme ve ödeme URL'lerini eklemek.
+3. Docker build ve yayın öncesi son kontrolleri tamamlamak.
 
 Yeni görseller ve kesin dış bağlantılar teslim edilene kadar uygulama mevcut geçici görsel ve Pavone ana sayfa bağlantısıyla çalışır durumdadır.

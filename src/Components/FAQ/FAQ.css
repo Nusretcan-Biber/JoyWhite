@@ -40,6 +40,10 @@
   gap: 0.75rem;
 }
 
+.faq-list > div {
+  width: 100%;
+}
+
 .faq-item {
   overflow: hidden;
   border: 1px solid #dbe4ef;
@@ -73,9 +77,19 @@
 }
 
 .faq-answer {
-  padding: 0 1.25rem 1.25rem;
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 1.25rem;
   color: #4b5563;
   line-height: 1.8;
+  opacity: 0;
+  transition: max-height 0.35s ease, opacity 0.25s ease, padding 0.35s ease;
+}
+
+.faq-item.is-open .faq-answer {
+  max-height: 18rem;
+  padding-bottom: 1.25rem;
+  opacity: 1;
 }
 
 .faq-answer a {
@@ -95,6 +109,11 @@
   }
 
   .faq-answer {
-    padding: 0 1rem 1rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+
+  .faq-item.is-open .faq-answer {
+    padding-bottom: 1rem;
   }
 }

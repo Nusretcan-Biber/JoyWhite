@@ -1,5 +1,6 @@
 import React from "react";
 import { FaChild, FaPalette, FaSkiing } from "react-icons/fa";
+import ScrollAnimation from "react-animate-on-scroll";
 import "./WinterCampContent.css";
 
 const campFeatures = [
@@ -33,6 +34,7 @@ const WinterCampContent = () => {
   return (
     <section className="winter-camp-content" aria-labelledby="winter-camp-title">
       <div className="winter-camp-content__inner">
+        <ScrollAnimation animateIn="fadeInUp" animateOnce={true}>
         <div className="winter-camp-content__heading">
           <p className="section-kicker">Joy White Kış Kampları</p>
           <h2 id="winter-camp-title">Joy White Kış Kamplarımızda Neler Var?</h2>
@@ -40,8 +42,15 @@ const WinterCampContent = () => {
             Pistte öğrenmeyi, atölyelerde üretmeyi ve doğada birlikte güçlenmeyi aynı kamp deneyiminde buluşturuyoruz.
           </p>
         </div>
+        </ScrollAnimation>
         <div className="winter-camp-content__grid">
-          {campFeatures.map((feature) => (
+          {campFeatures.map((feature, index) => (
+            <ScrollAnimation
+              animateIn="fadeInUp"
+              animateOnce={true}
+              delay={index * 120}
+              key={feature.title}
+            >
             <article className="winter-camp-card" key={feature.title}>
               <img src={feature.image} alt={feature.title} />
               <div className="winter-camp-card__body">
@@ -51,6 +60,7 @@ const WinterCampContent = () => {
                 <p>{feature.description}</p>
               </div>
             </article>
+            </ScrollAnimation>
           ))}
         </div>
       </div>

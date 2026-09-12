@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FaChevronDown } from "react-icons/fa";
+import ScrollAnimation from "react-animate-on-scroll";
 import "./FAQ.css";
 
 interface FAQItem {
@@ -95,20 +96,28 @@ const FAQ = () => {
   return (
     <section className="faq-section" aria-labelledby="faq-title">
       <div className="faq-section__inner">
-        <div className="faq-section__intro">
-          <p className="section-kicker">Joy White Kış Kampları</p>
-          <h2 id="faq-title">Sıkça Sorulan Sorular</h2>
-          <p>
-            Kamp deneyimi, güvenlik ve kayıt süreci hakkında ailelerin en çok merak ettiği bilgileri bir araya getirdik.
-          </p>
-        </div>
+        <ScrollAnimation animateIn="fadeInUp" animateOnce={true}>
+          <div className="faq-section__intro">
+            <p className="section-kicker">Joy White Kış Kampları</p>
+            <h2 id="faq-title">Sıkça Sorulan Sorular</h2>
+            <p>
+              Kamp deneyimi, güvenlik ve kayıt süreci hakkında ailelerin en çok merak ettiği bilgileri bir araya getirdik.
+            </p>
+          </div>
+        </ScrollAnimation>
         <div className="faq-list">
           {faqItems.map((item, index) => {
             const isOpen = openIndex === index;
             const panelId = `faq-panel-${index}`;
 
             return (
-              <div className={`faq-item ${isOpen ? "is-open" : ""}`} key={item.question}>
+              <ScrollAnimation
+                animateIn="fadeInUp"
+                animateOnce={true}
+                delay={index * 80}
+                key={item.question}
+              >
+              <div className={`faq-item ${isOpen ? "is-open" : ""}`}>
                 <button
                   type="button"
                   className="faq-question"
@@ -119,10 +128,11 @@ const FAQ = () => {
                   <span>{item.question}</span>
                   <FaChevronDown aria-hidden="true" />
                 </button>
-                <div id={panelId} className="faq-answer" hidden={!isOpen}>
+                <div id={panelId} className="faq-answer" aria-hidden={!isOpen}>
                   <p>{item.answer}</p>
                 </div>
               </div>
+              </ScrollAnimation>
             );
           })}
         </div>

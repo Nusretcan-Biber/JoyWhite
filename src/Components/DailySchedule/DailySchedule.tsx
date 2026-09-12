@@ -1,4 +1,5 @@
 import React from "react";
+import ScrollAnimation from "react-animate-on-scroll";
 import "./DailySchedule.css";
 
 interface ScheduleItem {
@@ -21,6 +22,7 @@ const DailySchedule = () => {
   return (
     <section className="daily-schedule" aria-labelledby="daily-schedule-title">
       <div className="daily-schedule__inner">
+        <ScrollAnimation animateIn="fadeInUp" animateOnce={true}>
         <div className="daily-schedule__heading">
           <p className="section-kicker">Kamp Deneyimi</p>
           <h2 id="daily-schedule-title">Sarıkamış&apos;ta Bir Gün Nasıl Geçiyor?</h2>
@@ -28,8 +30,15 @@ const DailySchedule = () => {
             Çocukların kayak, dinlenme ve yaratıcı atölye zamanlarını dengeli şekilde yaşayacağı örnek günlük akış.
           </p>
         </div>
+        </ScrollAnimation>
         <ol className="daily-schedule__list">
-          {scheduleItems.map((item) => (
+          {scheduleItems.map((item, index) => (
+            <ScrollAnimation
+              animateIn="fadeInLeft"
+              animateOnce={true}
+              delay={index * 100}
+              key={`${item.time}-${item.activity}`}
+            >
             <li className="daily-schedule__item" key={`${item.time}-${item.activity}`}>
               <time>{item.time}</time>
               <div>
@@ -37,6 +46,7 @@ const DailySchedule = () => {
                 <p>{item.location}</p>
               </div>
             </li>
+            </ScrollAnimation>
           ))}
         </ol>
       </div>

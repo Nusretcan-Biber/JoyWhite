@@ -57,6 +57,11 @@
   object-fit: cover;
   border-radius: 0.5rem;
   box-shadow: 18px 18px 0 #dbeafe;
+  transition: transform 0.45s ease;
+}
+
+.about-vision__media:hover img {
+  transform: scale(1.03);
 }
 
 .about-vision__caption {

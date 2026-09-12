@@ -1,5 +1,6 @@
 import React from "react";
 import { FaCheck, FaTimes } from "react-icons/fa";
+import ScrollAnimation from "react-animate-on-scroll";
 import "./KidsCampContent.css";
 
 const includedItems = [
@@ -18,6 +19,7 @@ const KidsCampContent = () => {
   return (
     <section className="kids-camp-content" aria-labelledby="kids-camp-title">
       <div className="kids-camp-content__inner">
+        <ScrollAnimation animateIn="fadeInUp" animateOnce={true}>
         <div className="kids-camp-content__heading">
           <p className="section-kicker">Çocuklar İçin Güvenli Kış Deneyimi</p>
           <h2 id="kids-camp-title">Joy White Kids Kamp İçerikleri</h2>
@@ -25,7 +27,9 @@ const KidsCampContent = () => {
             Çocukların yaş ve seviyelerine uygun eğitim, konaklama ve atölye deneyimini bir arada planlıyoruz.
           </p>
         </div>
+        </ScrollAnimation>
         <div className="kids-camp-content__columns">
+          <ScrollAnimation animateIn="fadeInLeft" animateOnce={true}>
           <div className="kids-camp-list kids-camp-list--included">
             <h3>Kamp paketine dahil olanlar</h3>
             <ul>
@@ -37,6 +41,8 @@ const KidsCampContent = () => {
               ))}
             </ul>
           </div>
+          </ScrollAnimation>
+          <ScrollAnimation animateIn="fadeInRight" animateOnce={true} delay={140}>
           <div className="kids-camp-list kids-camp-list--excluded">
             <h3>Kamp paketine dahil olmayanlar</h3>
             <ul>
@@ -48,6 +54,7 @@ const KidsCampContent = () => {
               ))}
             </ul>
           </div>
+          </ScrollAnimation>
         </div>
       </div>
     </section>
