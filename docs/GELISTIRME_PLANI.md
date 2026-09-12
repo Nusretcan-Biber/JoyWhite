@@ -467,6 +467,7 @@ Mevcut dosya yolları başka yerlerde kullanılıyorsa dosyalar doğrudan taşı
 - [x] Günlük program satırlarına sıralı giriş ve hover ayraç geçişi eklendi.
 - [x] `prefers-reduced-motion` desteği eklendi.
 - [x] Mobil ve desktop animasyon taşması kontrol edildi.
+- [x] Scroll animasyonlarının tekrar görünürlükte yeniden çalışması sağlandı.
 
 ## 11. Animasyon Geliştirme Planı
 
@@ -475,7 +476,7 @@ Yeni eklenen bölümlerde mevcut sitenin hero, kamp kartları, Services ve Conta
 ### 11.1. Ortak animasyon standardı
 
 - Mevcut `react-animate-on-scroll` kütüphanesi kullanılacak.
-- Scroll animasyonları `animateOnce={true}` ile yalnızca ilk görünüşte çalışacak.
+- Scroll animasyonları `animateOnce={false}` ile bölüm yeniden görünür olduğunda tekrar çalışacak.
 - Giriş animasyonlarının süresi genel olarak `0.5s - 0.8s` arasında tutulacak.
 - Kart ve liste elemanlarında stagger gecikmesi `0.08s - 0.15s` aralığında uygulanacak.
 - Mobilde aynı animasyonlar korunacak, ancak mesafe ve süre azaltılacak.

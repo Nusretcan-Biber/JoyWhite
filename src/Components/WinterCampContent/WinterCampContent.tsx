@@ -34,7 +34,7 @@ const WinterCampContent = () => {
   return (
     <section className="winter-camp-content" aria-labelledby="winter-camp-title">
       <div className="winter-camp-content__inner">
-        <ScrollAnimation animateIn="fadeInUp" animateOnce={true}>
+        <ScrollAnimation animateIn="fadeInUp" animateOnce={false}>
         <div className="winter-camp-content__heading">
           <p className="section-kicker">Joy White Kış Kampları</p>
           <h2 id="winter-camp-title">Joy White Kış Kamplarımızda Neler Var?</h2>
@@ -47,7 +47,7 @@ const WinterCampContent = () => {
           {campFeatures.map((feature, index) => (
             <ScrollAnimation
               animateIn="fadeInUp"
-              animateOnce={true}
+              animateOnce={false}
               delay={index * 120}
               key={feature.title}
             >

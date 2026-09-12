@@ -22,7 +22,7 @@ const DailySchedule = () => {
   return (
     <section className="daily-schedule" aria-labelledby="daily-schedule-title">
       <div className="daily-schedule__inner">
-        <ScrollAnimation animateIn="fadeInUp" animateOnce={true}>
+        <ScrollAnimation animateIn="fadeInUp" animateOnce={false}>
         <div className="daily-schedule__heading">
           <p className="section-kicker">Kamp Deneyimi</p>
           <h2 id="daily-schedule-title">Sarıkamış&apos;ta Bir Gün Nasıl Geçiyor?</h2>
@@ -35,7 +35,7 @@ const DailySchedule = () => {
           {scheduleItems.map((item, index) => (
             <ScrollAnimation
               animateIn="fadeInLeft"
-              animateOnce={true}
+              animateOnce={false}
               delay={index * 100}
               key={`${item.time}-${item.activity}`}
             >

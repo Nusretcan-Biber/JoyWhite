@@ -96,7 +96,7 @@ const FAQ = () => {
   return (
     <section className="faq-section" aria-labelledby="faq-title">
       <div className="faq-section__inner">
-        <ScrollAnimation animateIn="fadeInUp" animateOnce={true}>
+        <ScrollAnimation animateIn="fadeInUp" animateOnce={false}>
           <div className="faq-section__intro">
             <p className="section-kicker">Joy White Kış Kampları</p>
             <h2 id="faq-title">Sıkça Sorulan Sorular</h2>
@@ -113,7 +113,7 @@ const FAQ = () => {
             return (
               <ScrollAnimation
                 animateIn="fadeInUp"
-                animateOnce={true}
+                animateOnce={false}
                 delay={index * 80}
                 key={item.question}
               >

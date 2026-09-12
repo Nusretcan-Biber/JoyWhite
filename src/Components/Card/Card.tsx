@@ -24,7 +24,7 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ camp }) => {
     return (
-        <ScrollAnimation animateIn="fadeIn" animateOnce={true}>
+        <ScrollAnimation animateIn="fadeIn" animateOnce={false}>
             <div className='card'>
                 <div className="card-content">
                     <div className="card-img">

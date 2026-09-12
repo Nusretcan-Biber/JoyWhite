@@ -6,7 +6,7 @@ const AboutVision = () => {
   return (
     <section className="about-vision" aria-labelledby="about-vision-title">
       <div className="about-vision__inner">
-        <ScrollAnimation animateIn="fadeInLeft" animateOnce={true}>
+        <ScrollAnimation animateIn="fadeInLeft" animateOnce={false}>
         <div className="about-vision__content">
           <p className="section-kicker">Joy White Kayak Kulübü</p>
           <h2 id="about-vision-title">Biz Kimiz &amp; Pedagojik Vizyonumuz</h2>
@@ -27,7 +27,7 @@ const AboutVision = () => {
           </div>
         </div>
         </ScrollAnimation>
-        <ScrollAnimation animateIn="fadeInRight" animateOnce={true} delay={160}>
+        <ScrollAnimation animateIn="fadeInRight" animateOnce={false} delay={160}>
         <div className="about-vision__media">
           <img
             src="/images/staticImages/parallax-1.jpg"

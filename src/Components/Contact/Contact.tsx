@@ -6,7 +6,7 @@ const Contact = () => {
   return (
     <section className="py-20 bg-white dark:bg-gray-800" id="about">
       <div className="container px-6 pt-10 mx-auto">
-        <ScrollAnimation animateIn="fadeInDown" animateOnce={true}>
+        <ScrollAnimation animateIn="fadeInDown" animateOnce={false}>
           <h1 className="text-3xl font-semibold text-center text-gray-800 capitalize lg:text-4xl dark:text-white">
             Hakkımızda
           </h1>
@@ -29,7 +29,7 @@ const Contact = () => {
             </p> */}
         <div className="flex flex-col md:flex-row items-center gap-8 mt-10">
           <div className="md:w-1/2">
-            <ScrollAnimation animateIn="fadeInLeft" animateOnce={true}>
+            <ScrollAnimation animateIn="fadeInLeft" animateOnce={false}>
               <img
                 className="object-cover w-full rounded-xl shadow-lg about-imagea aspect-square"
                 src="/images/staticImages/contactImage.jpg"
@@ -38,7 +38,7 @@ const Contact = () => {
             </ScrollAnimation>
           </div>
           <div className="md:w-1/2">
-            <ScrollAnimation animateIn="fadeInRight" animateOnce={true}>
+            <ScrollAnimation animateIn="fadeInRight" animateOnce={false}>
               <h1 className="text-4xl font-semibold text-gray-700 capitalize dark:text-white">
                 JoyWhite Kayak Kulübü
               </h1>

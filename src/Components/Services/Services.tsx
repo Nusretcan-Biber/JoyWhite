@@ -44,7 +44,7 @@ const Services = () => {
           {services.map((service, index) => (
             <ScrollAnimation
               animateIn="fadeInUp"
-              animateOnce={true}
+              animateOnce={false}
               duration={0.7 * index}
               key={index}
             >
