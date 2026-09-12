@@ -22,6 +22,7 @@ const Sarikamis = () => {
                   src="/images/staticImages/sarikamis-test.jpg"
                   alt="Sarıkamış'ta karla kaplı sarıçam ormanları"
                   className="h-64 object-cover text-center shadow-md"
+                  style={{ objectPosition: "center 65%" }}
                 />
               </div>
 
