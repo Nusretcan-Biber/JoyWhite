@@ -1,34 +1,20 @@
-import React, { useState } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { campsData } from "../data/dummydata"; // campsData'yı import ettik
 import { NavbarComponent } from "../Navbar/NavbarComponent";
 import { FooterComponent } from "../Footer/FooterComponent";
 import { Tabs, Table, Card, ListGroup } from "flowbite-react";
-import { HiAdjustments, HiClipboardList, HiUserCircle } from "react-icons/hi";
+import { HiAdjustments, HiUserCircle } from "react-icons/hi";
 import { MdDashboard } from "react-icons/md";
 import './CampDetail.css';
-import { faHotel, faSnowflake, faPlaneArrival, faSkiing, faPhone, faShuttleVan, faChild } from "@fortawesome/free-solid-svg-icons";
+import { faSnowflake, faSkiing, faPhone, faChild } from "@fortawesome/free-solid-svg-icons";
 import { faInstagram, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { faCreditCard, faUsers } from "@fortawesome/free-solid-svg-icons";
 
 const CampDetail = () => {
   const { id } = useParams();
-  console.log(id);
   const camp = campsData.find((camp) => camp.id === Number(id)); // id'yi Number'a çeviriyoruz
-  const [selectedPrice, setSelectedPrice] = useState(
-    camp?.Price.adultChildCombination[0].price
-  );
-
-  const handleCampChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const campId = event.target.value;
-    const camp = campsData.find((c) => c.id === parseInt(campId));
-    setSelectedPrice(camp?.Price.adultChildCombination[0].price); // İlk fiyatı varsayılan olarak seç
-  };
-
-  const handlePriceChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setSelectedPrice(event.target.value);
-  };
 
   // Eğer kamp bulunamazsa bir mesaj göster
   if (!camp) {

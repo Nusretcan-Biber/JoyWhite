@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FormEvent, useRef, useState } from 'react'
+import React, { FormEvent, useRef, useState } from 'react'
 import './ContactPage.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWhatsapp, faInstagram } from "@fortawesome/free-brands-svg-icons";
@@ -37,16 +37,12 @@ const Contact = () => {
 
   const [loading, setLoading] = useState<boolean>(false);
 
-  const [buttonDisabled, setButtonDisabled] = useState<boolean>(true);
-
   const sendEmail = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
-    setButtonDisabled(true);
 
     if (!checkForm()) {
       setLoading(false);
-      setButtonDisabled(true);
       return;
     }
 
@@ -60,7 +56,6 @@ const Contact = () => {
       .then(() => {
         formRef.current!.reset();
         setLoading(false);
-        setButtonDisabled(true);
         toast.success("Mesajınız başarıyla gönderildi. En kısa sürede size dönüş yapacağız.",
           {
             position: "top-center"
@@ -69,7 +64,6 @@ const Contact = () => {
       })
       .catch((e) => {
         setLoading(false);
-        setButtonDisabled(false);
         const errorMessage = "Bir hata oluştu. Lütfen daha sonra tekrar deneyin";
         toast.error(errorMessage,
           {
@@ -122,14 +116,6 @@ const Contact = () => {
 
     setErrors(newErrors);
     return isValid;
-  };
-
-  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    if (checkForm()) {
-      setButtonDisabled(false);
-    } else {
-      setButtonDisabled(true);
-    }
   };
 
   return (
@@ -192,7 +178,6 @@ const Contact = () => {
                   className="contact-input"
                   type="text"
                   placeholder="Ad Soyad"
-                  onChange={handleChange}
                   name="user_name"
                 />
                 <p className="contact-error">{errors.user_name}</p>
@@ -200,20 +185,20 @@ const Contact = () => {
                   className="contact-input"
                   type="email"
                   placeholder="E-posta"
-                  onChange={handleChange}
                   name="user_email"
                 />
                 <p className="contact-error">{errors.user_email}</p>
                 <textarea
                   className="contact-input contact-input--textarea"
                   placeholder="Mesaj"
-                  onChange={handleChange}
                   name="message"
                 ></textarea>
                 <p className="contact-error">{errors.message}</p>
 
                 <button
                   className="contact-button"
+                  type="submit"
+                  disabled={loading}
                 >
                   {loading ? "Gönderiliyor..." : "Gönder"}
                 </button>
@@ -227,6 +212,7 @@ const Contact = () => {
         <div className="contact-map w-full h-96 mt-32">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3041.869222938713!2d42.614557677267946!3d40.32305986133314!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x406961e3d82394e7%3A0x3efaded11587e122!2sJoy%20White%20Kayak%20ve%20Snowboard%20Okulu!5e0!3m2!1str!2str!4v1729931698385!5m2!1str!2str"
+            title="Joy White Kayak ve Snowboard Okulu konumu"
             loading="lazy" className="w-full h-full map" allowFullScreen></iframe>
         </div>
       </section>

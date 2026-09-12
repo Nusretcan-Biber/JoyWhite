@@ -1,12 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 interface PhotoHeroSectionProps {
   sectionName: string;
 }
 
 const PhotoHeroSection: React.FC<PhotoHeroSectionProps> = ({ sectionName }) => {
-  const [isOpen, setIsOpen] = useState(false); // React state for mobile menu
-
   return (
     <>
       <header className="test">

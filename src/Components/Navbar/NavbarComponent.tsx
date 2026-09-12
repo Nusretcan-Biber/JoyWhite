@@ -1,14 +1,10 @@
 import React, { useEffect, useState } from "react"; // React'ı içe aktar
-import { Avatar, Dropdown, Navbar } from "flowbite-react";
-import { IoCartOutline } from "react-icons/io5";
-import { useNavigate } from "react-router-dom";
+import { Dropdown, Navbar } from "flowbite-react";
 import './NavbarComponent.css';
 
 export function NavbarComponent({ useScrolled = false }) {
   const [isScrolled, setIsScrolled] = useState(useScrolled); // Scroll durumu
   const [isMenuOpen, setIsMenuOpen] = useState(false); // Menü açılma durumu
-  const navigate = useNavigate();
-
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(useScrolled ? useScrolled : window.scrollY > 250);
@@ -19,7 +15,7 @@ export function NavbarComponent({ useScrolled = false }) {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [useScrolled]);
 
   // Dropdown tıklandığında sayfanın en üstüne kaymasını önlemek için
   const handleDropdownClick = (event: React.MouseEvent<HTMLSpanElement>) => {

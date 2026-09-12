@@ -9,7 +9,6 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import "./HeroSection.css";
 import { Autoplay, Navigation, Pagination, EffectFade } from 'swiper/modules';
-import ScrollAnimation from "react-animate-on-scroll";
 
 const HeroSection = () => {
 
@@ -65,20 +64,6 @@ const HeroSection = () => {
             {/* <h1 className="hero-bg-title">JOYWHITE</h1> */}
             <div className="absolute inset-0 custom-gradient"></div>
 
-            {/* <div className="container h-full mx-auto flex items-center justify-center relative z-10 grid grid-cols-1 md:grid-cols-2 gap-4 px-20 md:px-5">
-              <div className="hero-content">
-                <ScrollAnimation animateIn="backInDown" animateOnce={true}>
-                  <h1 className="hero-title">{slide.title}</h1>
-                </ScrollAnimation>
-                <ScrollAnimation animateIn="backInLeft" animateOnce={true}>
-                  <p className="hero-text">{slide.text}</p>
-                </ScrollAnimation>
-                <ScrollAnimation animateIn="backInUp" animateOnce={true}>
-                  <a onClick={scrollToCamps} className="my-btn hero-btn">Keşfet</a>
-                </ScrollAnimation>
-              </div>
-            </div> */}
-
             <div className="container h-full mx-auto flex items-center justify-center relative z-10 px-20 md:px-5">
               <div className="hero-content">
                   <h3 className="hero-subtitle">Ski & Snowboard</h3>
@@ -98,9 +83,9 @@ const HeroSection = () => {
 
       </Swiper>
 
-      <a className="scroll-down" onClick={scrollToCamps}>
+      <button type="button" className="scroll-down" onClick={scrollToCamps} aria-label="Kamp bölümüne ilerle">
         <FontAwesomeIcon icon={faAnglesDown} />
-      </a>
+      </button>
     </section>
   );
 };

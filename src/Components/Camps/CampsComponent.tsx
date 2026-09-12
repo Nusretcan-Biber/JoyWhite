@@ -1,30 +1,9 @@
 import React from "react";
-import { campsData } from "../data/dummydata"; // campsData'nın başka bir veri dosyasından alındığını varsayıyoruz
-import { useNavigate } from "react-router-dom";
+import { campsData } from "../data/dummydata";
 import Card from "../Card/Card";
 import "./CampsComponent.css";
-import ScrollAnimation from "react-animate-on-scroll";
 
 const CampsComponent = () => {
-  const navigate = useNavigate(); // Yönlendirme için kullanacağız
-
-  const handleCardClick = (id: any) => {
-    navigate(`/Training/${id}`); // Tıklanan kampın id'siyle yönlendir
-  };
-
-  const getPriceRange = (prices: { price: string }[]) => {
-    const numericPrices = prices.map((price) =>
-      parseFloat(price.price.replace(".", "").replace(",", "."))
-    );
-    const minPrice = Math.min(...numericPrices);
-    const maxPrice = Math.max(...numericPrices);
-    return `${minPrice.toLocaleString("tr-TR", {
-      minimumFractionDigits: 2,
-    })} TL - ${maxPrice.toLocaleString("tr-TR", {
-      minimumFractionDigits: 2,
-    })} TL`;
-  };
-
   return (
     <div id="camps">
       {/* Boş div yerine absolute konumlandırma ile arka planın bir kısmı renklendirilecek */}

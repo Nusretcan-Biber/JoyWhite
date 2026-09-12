@@ -31,12 +31,14 @@ const ScrollTop = () => {
   }, []);
 
   return (
-    <a
+    <button
+      type="button"
       onClick={scrollToTop}
+      aria-label="Sayfanın başına dön"
       className={isVisible ? "scrolltop scrolltop--active" : "scrolltop"}
     >
       <FontAwesomeIcon icon={faArrowUp} className="scrolltop__icon" />
-    </a>
+    </button>
   );
 };
 
