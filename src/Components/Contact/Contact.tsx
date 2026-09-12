@@ -7,7 +7,7 @@ const Contact = () => {
     <section className="py-20 bg-white dark:bg-gray-800" id="about">
       <div className="container px-6 pt-10 mx-auto">
         <ScrollAnimation animateIn="fadeInDown" animateOnce={false}>
-          <h1 className="text-3xl font-semibold text-center text-gray-800 capitalize lg:text-4xl dark:text-white">
+          <h2 className="text-3xl font-semibold text-center text-gray-800 capitalize lg:text-4xl dark:text-white">
             Hakkımızda
           </h1>
 
@@ -39,7 +39,7 @@ const Contact = () => {
           </div>
           <div className="md:w-1/2">
             <ScrollAnimation animateIn="fadeInRight" animateOnce={false}>
-              <h1 className="text-4xl font-semibold text-gray-700 capitalize dark:text-white">
+              <h2 className="text-4xl font-semibold text-gray-700 capitalize dark:text-white">
                 JoyWhite Kayak Kulübü
               </h1>
 

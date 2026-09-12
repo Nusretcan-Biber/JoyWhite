@@ -33,7 +33,7 @@ const Services = () => {
 
     <div className="py-16 parallax-bg"
     >
-      <h1 className="text-center font-bold text-3xl lg:text-4xl">Faaliyetlerimiz</h1>
+      <h2 className="text-center font-bold text-3xl lg:text-4xl">Faaliyetlerimiz</h2>
       <div className="flex justify-center mx-auto mt-6">
         <span className="inline-block w-40 h-1 bg-blue-500 rounded-full"></span>
         <span className="inline-block w-3 h-1 mx-1 bg-blue-500 rounded-full"></span>

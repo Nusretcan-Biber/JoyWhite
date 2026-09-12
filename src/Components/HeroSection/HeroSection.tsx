@@ -42,6 +42,7 @@ const HeroSection = () => {
 
   return (
     <section id="hero" className="hero-section">
+      <h1 className="sr-only">Joy White Kış Kampı</h1>
       <Swiper
         modules={[EffectFade, Autoplay, Navigation, Pagination]}
         effect="fade"
@@ -60,15 +61,15 @@ const HeroSection = () => {
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
-            <img src={slide.image} alt="hero" className="hero-bg" />
+            <img src={slide.image} alt={slide.title} className="hero-bg" />
             {/* <h1 className="hero-bg-title">JOYWHITE</h1> */}
             <div className="absolute inset-0 custom-gradient"></div>
 
             <div className="container h-full mx-auto flex items-center justify-center relative z-10 px-20 md:px-5">
               <div className="hero-content">
-                  <h3 className="hero-subtitle">Ski & Snowboard</h3>
-                  <h1 className="hero-title">JOYWHITE</h1>
-                  <h1 className="hero-title transparent-text">KAYAK KULÜBÜ</h1>
+                  <p className="hero-subtitle">Ski & Snowboard</p>
+                  <h2 className="hero-title">Joy White Kış Kampı</h2>
+                  <p className="hero-title transparent-text">Sarıkamış&apos;ta Kayak, Sanat ve WinterLabs</p>
               </div>
 
             </div>

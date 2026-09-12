@@ -9,7 +9,7 @@ const CampsComponent = () => {
       {/* Boş div yerine absolute konumlandırma ile arka planın bir kısmı renklendirilecek */}
       <section className="bg-white dark:bg-gray-900 py-12">
         <div className="container px-6 py-10 mx-auto">
-          <h1 className="text-3xl font-semibold text-center text-gray-800 capitalize lg:text-4xl dark:text-white">
+          <h2 className="text-3xl font-semibold text-center text-gray-800 capitalize lg:text-4xl dark:text-white">
             Eğitimlerimiz
           </h1>
           <div className="flex justify-center mx-auto mt-6">

@@ -693,3 +693,228 @@ Geliştirme planının ana içerik işleri tamamlandı. Kalan işler:
 3. Docker build ve yayın öncesi son kontrolleri tamamlamak.
 
 Yeni görseller ve kesin dış bağlantılar teslim edilene kadar uygulama mevcut geçici görsel ve Pavone ana sayfa bağlantısıyla çalışır durumdadır.
+
+## 13. SEO Geliştirme Planı
+
+Bu bölüm, Joy White web sitesinin arama motorları tarafından daha doğru okunması, sosyal medya paylaşımlarında düzgün görünmesi ve önemli sayfaların kendi içerikleriyle indekslenmesi için hazırlanmıştır.
+
+SEO metinleri görünür içerikle uyumlu olmalı; kullanıcıya gösterilmeyen anahtar kelime listeleri veya doğrulanmamış güvenlik/turizm iddiaları kullanılmamalıdır.
+
+### 13.1. Mevcut SEO durumu
+
+Mevcut `public/index.html` dosyasında genel bir title ve description bulunuyor. Ancak:
+
+- HTML dili `en` olarak ayarlanmış; site Türkçe olduğu için `tr` yapılmalı.
+- Title ve description ana sayfanın yeni kamp içeriğini tam yansıtmıyor.
+- Open Graph etiketleri bulunmuyor.
+- Canonical URL bulunmuyor.
+- Route bazlı title ve description yapısı bulunmuyor.
+- JSON-LD yapılandırılmış verisi bulunmuyor.
+- Bazı H1 kullanımları semantik olarak fazla; ana sayfada tek bir ana H1 tercih edilmeli.
+- Bazı görsellerin alt metinleri genel veya içeriği yeterince açıklamıyor.
+- `meta keywords` kullanılmamalı; modern arama motorlarında anlamlı bir sıralama katkısı sağlamıyor.
+
+### 13.2. Ana sayfa temel metadata
+
+**Dosya:** `public/index.html`
+
+Önerilen title:
+
+```text
+Joy White Kış Kampı | Sarıkamış Çocuk Kayak Okulu
+```
+
+Önerilen description:
+
+```text
+Joy White, Sarıkamış'ta çocuklara kayak ve snowboard eğitimi sunar. Kayak eğitimini WinterLabs yaratıcı sanat, teknoloji ve drama atölyeleriyle birleştiren kış kampını keşfedin.
+```
+
+Uygulama adımları:
+
+1. `<html lang="en">` değerini `<html lang="tr">` yap.
+2. Mevcut title değerini yeni title ile değiştir.
+3. Mevcut description değerini yeni description ile değiştir.
+4. Description metnini yaklaşık 140-160 karakter aralığında tut.
+5. Ana sayfada görünen içerik ile metadata arasında anlam farkı oluşturmama.
+
+### 13.3. Ana sayfa H1 ve başlık hiyerarşisi
+
+**Dosya:** `src/Components/HeroSection/HeroSection.tsx`
+
+Mevcut Hero bölümünde iki adet H1 bulunuyor. Ana sayfanın tek ana H1'i aşağıdaki anlamı taşımalı:
+
+```text
+Joy White Kış Kampı
+```
+
+Önerilen yapı:
+
+```tsx
+<h1>Joy White Kış Kampı</h1>
+<p>Sarıkamış'ta kayak, sanat ve WinterLabs deneyimi</p>
+```
+
+Uygulama kuralları:
+
+- Aynı sayfada birden fazla görsel H1 kullanılmamalı.
+- Bölüm başlıkları H2, kart başlıkları H3 olmalı.
+- Görsel tasarım korunabilir; yalnızca HTML başlık semantiği düzeltilmeli.
+- “JOYWHITE” marka metni H1 yerine görsel başlık veya H2 olarak kullanılabilir.
+
+### 13.4. Route bazlı SEO metadata
+
+React Router kullandığımız için her sayfaya uygun title ve description tanımlanmalı.
+
+**Önerilen teknik yaklaşım:**
+
+- `react-helmet-async` kurulmalı.
+- `src/Components/SEO/SEO.tsx` bileşeni oluşturulmalı.
+- `src/Components/data/seoData.ts` içinde route metadata tanımlanmalı.
+- `src/index.tsx` içinde `HelmetProvider` kullanılmalı.
+
+Önerilen route metadata:
+
+| Route | Title | Description amacı |
+|---|---|---|
+| `/` | `Joy White Kış Kampı | Sarıkamış Çocuk Kayak Okulu` | Çocuk kayak eğitimi, WinterLabs ve kamp deneyimi |
+| `/Trainings` | `Kayak Eğitimleri ve Kış Kampları | Joy White` | Eğitim seviyeleri, kamp tarihleri ve programlar |
+| `/Training/:id` | `Sarıkamış Kayak Kampı | Joy White` | Seçilen kampın tarih, fiyat, eğitim ve rezervasyon bilgileri |
+| `/SarikamisKayakMerkezi` | `Sarıkamış Kayak Merkezi ve Joy White Kış Kampı` | Sarıkamış, pistler, ulaşım ve kamp deneyimi |
+| `/Gallery` | `Joy White Kayak Kampı Galerisi` | Kamp ve kayak deneyimlerinden görseller |
+| `/Contact` | `İletişim ve Rezervasyon | Joy White` | İletişim, konum, telefon ve acente bilgileri |
+| `/KayakSporuHakkindaBilinmesiGerekenler` | `Kayak Sporu Hakkında Bilinmesi Gerekenler` | Yeni başlayanlar için kayak bilgileri |
+| `/KayakcilarIcinOnemliGuvenlikKurallari` | `Kayakçılar İçin Güvenlik Kuralları` | Kayak güvenliği ve hazırlık bilgileri |
+
+Dinamik kamp detaylarında title kampın tarihi veya konumuyla zenginleştirilebilir; ancak title gereksiz yere uzatılmamalı.
+
+### 13.5. Open Graph ve paylaşım metadata
+
+`SEO` bileşenine aşağıdaki alanlar eklenmeli:
+
+```html
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="tr_TR" />
+<meta property="og:title" content="..." />
+<meta property="og:description" content="..." />
+<meta property="og:url" content="..." />
+<meta property="og:image" content="..." />
+<meta name="twitter:card" content="summary_large_image" />
+```
+
+Kurallar:
+
+- `og:image` olarak gerçek ve izinli bir Joy White görseli kullanılmalı.
+- Geçici veya filigranlı Sarıkamış fotoğrafı sosyal paylaşım görseli yapılmamalı.
+- Canonical ve `og:url` aynı sayfanın gerçek URL'sini göstermeli.
+- Alan adı kesinleşmeden production URL sabitlenmemeli.
+
+### 13.6. Canonical URL
+
+Her indekslenebilir sayfada tek canonical URL bulunmalı:
+
+```html
+<link rel="canonical" href="https://alan-adiniz.com/" />
+```
+
+Uygulama alan adı kesinleştiğinde yapılmalı. Localhost, Vercel preview ve production URL'leri canonical olarak kullanılmamalı.
+
+### 13.7. Görsel alt metinleri
+
+**Kontrol edilecek dosyalar:**
+
+- `src/Components/HeroSection/HeroSection.tsx`
+- `src/Components/AboutVision/AboutVision.tsx`
+- `src/Components/WinterCampContent/WinterCampContent.tsx`
+- `src/Components/Card/Card.tsx`
+- `src/Pages/Blogs/Sarikamis.tsx`
+- `src/Pages/Gallery/Gallery.tsx`
+- `src/Components/Contact/Contact.tsx`
+
+Alt metin kuralları:
+
+- Görselde gerçekten görünen içeriği anlatmalı.
+- Anahtar kelime doldurma yapılmamalı.
+- Dekoratif görseller için `alt=""` kullanılmalı.
+- Aynı görsel için her yerde aynı genel alt metin kullanılmamalı.
+
+Örnekler:
+
+```tsx
+alt="Sarıkamış'ta karla kaplı sarıçam ormanları"
+alt="Joy White WinterLabs yaratıcı sanat ve drama atölyesi"
+alt="Sarıkamış kayak pistinde kış sporları eğitimi"
+```
+
+Bir fotoğrafta çocuklar görünmüyorsa `kayak eğitimi alan çocuklar` gibi bir alt metin yazılmamalı.
+
+### 13.8. Yapılandırılmış veri ve JSON-LD
+
+Ana sayfaya ve iletişim alanına uygun yapılandırılmış veri eklenebilir:
+
+- `SportsClub` veya uygun `LocalBusiness` şeması
+- `Organization` bilgisi
+- Telefon, Instagram, adres ve site URL'si
+- Sarıkamış konum bilgisi
+- Pavone Travel Agency bilgisi yalnızca resmi ilişki doğrulanırsa eklenmeli
+
+Kamp detayları için `Event` veya `Product` şeması ancak tarih, fiyat, stok ve kayıt URL'leri kesinleştiğinde kullanılmalı. Sabit veya geçmiş kamp tarihleriyle yanlış etkinlik verisi üretilmemeli.
+
+### 13.9. robots.txt ve sitemap
+
+**Dosyalar:**
+
+- `public/robots.txt`
+- Yeni `public/sitemap.xml`
+
+Yapılacaklar:
+
+1. `robots.txt` içinde sitemap URL'si tanımla.
+2. 404, preview ve özel yönetim yolları varsa indekslenmesini engelle.
+3. Ana sayfa, eğitimler, kamp detayları, Sarıkamış, Galeri ve Contact URL'lerini sitemap'e ekle.
+4. Kamp tarihleri veya route'lar değiştiğinde sitemap'i güncelle.
+5. Production alan adı kesinleşmeden sitemap URL'sini sabitleme.
+
+### 13.10. İçerik doğrulama ve riskli ifadeler
+
+Aşağıdaki ifadeler doğrulanmadan metadata, H1 veya JSON-LD içine alınmamalı:
+
+- “Sıfır çığ riski”
+- “Hiçbir çığ riski yok”
+- “Kristal kar sadece Alpler ve Sarıkamış'ta bulunur”
+- “Kayıtlar başladı”
+- “Dünyaca ünlü” gibi kanıt gerektiren ifadeler
+
+Daha güvenli içerik dili kullanılmalı:
+
+```text
+Sarıkamış'ın kendine özgü kar yapısı ve sarıçam ormanları, Joy White'ın çocuklara yönelik kış kampı deneyimine doğal bir ortam sunar.
+```
+
+### 13.11. SEO uygulama sırası
+
+1. `lang`, title ve description değerlerini düzelt.
+2. Ana sayfa H1 hiyerarşisini düzelt.
+3. SEO bileşeni ve route metadata yapısını oluştur.
+4. Open Graph ve Twitter metadata alanlarını ekle.
+5. Production alan adı kesinleşince canonical URL ekle.
+6. Görsel alt metinlerini tek tek kontrol et.
+7. JSON-LD Organization/SportsClub verisini ekle.
+8. robots.txt ve sitemap.xml dosyalarını güncelle.
+9. Google Rich Results, Lighthouse ve Search Console kontrollerini yap.
+10. SEO metadata, route yenileme, mobil görünüm ve sosyal paylaşım önizlemelerini test et.
+
+### 13.12. SEO kabul kriterleri
+
+- [ ] HTML dili `tr`.
+- [ ] Ana sayfada tek ana H1.
+- [ ] Ana sayfa title ve description güncel.
+- [ ] Her önemli route'un ayrı title ve description değeri var.
+- [ ] Open Graph ve Twitter metadata alanları çalışıyor.
+- [ ] Canonical URL production alan adına göre ayarlanmış.
+- [ ] Görsellerin alt metinleri içerikle uyumlu.
+- [ ] `meta keywords` kullanılmıyor.
+- [ ] Riskli güvenlik/turizm iddiaları doğrulanmış veya daha temkinli dille yazılmış.
+- [ ] JSON-LD geçerli ve gerçek işletme bilgileri içeriyor.
+- [ ] robots.txt ve sitemap.xml production URL'leriyle uyumlu.
+- [ ] Lighthouse SEO kontrolü tamamlandı.
