@@ -9,6 +9,14 @@ body {
   overflow-x: hidden;
 }
 
+/* Ortak anasayfa bölüm başlığı ölçeği - FAQ, AboutVision, WinterCamp, KidsCamp,
+   DailySchedule ve Biz Kimiz sayfasıyla aynı: clamp(2rem, 4vw, 3rem) / 700. */
+.section-heading-lg {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: #111827;
+}
+
 img,
 iframe {
   max-width: 100%;

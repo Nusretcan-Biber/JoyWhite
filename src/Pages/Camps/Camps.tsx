@@ -13,7 +13,7 @@ const Camps = () => {
 
         <PhotoHeroSection sectionName="Eğitimlerimiz" />
 
-        <CampsComponent />
+        <CampsComponent showFilter />
 
         <InstaSection />
 

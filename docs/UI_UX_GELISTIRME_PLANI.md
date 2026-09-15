@@ -96,10 +96,13 @@ Düşük efor, yüksek etki. Aynı gün bitirilebilir.
 - [x] Galeri görsellerinin tamamında anlamlı `alt` metni var, `autoPlay` kapatıldı.
 - [x] Blog aside'daki aktif link vurgusu SPA içi gezinmede doğru çalışıyor.
 
-### Kapsam dışı bırakılan / ertelenen maddeler
+### Ertelenen maddelerin sonradan tamamlanması (16 Eylül 2026)
 
-- Başlık tipografisi için ortak ölçek belirleme (Faz 2) - çok geniş kapsamlı, görsel QA gerektiriyor.
-- Tüm buton stillerinin tek bileşende birleştirilmesi (Faz 3) - görsel diller gerçekten farklı, zorla birleştirme risk taşıyordu; bunun yerine telefon/WhatsApp link mantığı merkezileştirildi.
-- 17 kampın tarih/kategori bazlı filtrelenmesi (Faz 5) - tasarım kararı gerektiriyor.
-- Galeri kategorileri/sekmeleri (Faz 9) - içerik netleşmeden yapılamaz.
-- "Kayak Sporu Hakkında" blogunun kapak görseli (Faz 10) - gerçek görsel teslim edilmeden değiştirilemez.
+- [x] **Başlık tipografisi ortak ölçeği** - Site genelinde tam bir yeniden ölçekleme yerine, zaten baskın olan standart (`clamp(2rem, 4vw, 3rem)` / 700 - FAQ, AboutVision, WinterCamp, KidsCamp, DailySchedule, Biz Kimiz'de kullanılıyordu) `index.css`'e `.section-heading-lg` ortak sınıfı olarak eklendi; bu standardın dışında kalan 4 bölüm (`InstaSection`, `Contact` özeti, `CampsComponent`, `Services`) buna geçirildi. Kart/tablo/sekme başlıkları gibi farklı semantik seviyedeki öğelere dokunulmadı (risk/fayda oranı düşüktü).
+- [x] **17 kampın tarih bazlı filtrelenmesi** - `CampsComponent.tsx`'e `showFilter` prop'u eklendi; `Camps.tsx` (`/Trainings` sayfası) bunu `true` geçiyor ve ay bazlı filtre pilleri (Tümü/Aralık/Ocak/Şubat/Mart) gösteriyor, anasayfadaki kısa önizleme listesi ise sade kalması için filtre olmadan gösterilmeye devam ediyor.
+
+### Kalıcı olarak ertelenen maddeler (gerçek veri/içerik gerektiriyor)
+
+- **Tüm buton stillerinin tek bileşende birleştirilmesi (Faz 3)** - görsel diller (ikon-only daire, genişleyen pill, dolu yeşil pill) kasıtlı olarak farklı; zorla birleştirmek kaliteyi düşürür. Asıl riskli olan telefon/WhatsApp link mantığı zaten merkezileştirildi.
+- **Galeri kategorileri/sekmeleri (Faz 9)** - `public/images/galery/resim1.jpg...resim37.jpg` dosya adlarında hiçbir kategori bilgisi yok; hangi fotoğrafın "Kayak Eğitimi" mi "WinterLabs" mi olduğunu uydurmak yanlış etiketleme riski taşır. Gerçek kategori bilgisi/görsel teslimi olmadan yapılamaz.
+- **"Kayak Sporu Hakkında" blogunun kapak görseli (Faz 10)** - hâlâ genel `ornekResim.jpg` placeholder'ı kullanıyor; içeriğe özel gerçek bir fotoğraf teslim edilmeden değiştirilemez.

@@ -31,7 +31,7 @@ const Services = () => {
 
     <div className="py-16 parallax-bg"
     >
-      <h2 className="text-center font-bold text-3xl lg:text-4xl">Neden Joy White?</h2>
+      <h2 className="section-heading-lg text-center">Neden Joy White?</h2>
       <div className="flex justify-center mx-auto mt-6">
         <span className="inline-block w-40 h-1 bg-logoBlue rounded-full"></span>
         <span className="inline-block w-3 h-1 mx-1 bg-logoBlue rounded-full"></span>

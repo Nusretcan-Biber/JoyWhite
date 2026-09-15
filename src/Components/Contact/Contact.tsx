@@ -7,7 +7,7 @@ const Contact = () => {
     <section className="py-20 bg-white">
       <div className="container px-6 pt-10 mx-auto">
         <ScrollAnimation animateIn="fadeInDown" animateOnce={false}>
-          <h2 className="text-3xl font-semibold text-center text-gray-800 capitalize lg:text-4xl">
+          <h2 className="section-heading-lg text-center capitalize">
             Hakkımızda
           </h2>
 
