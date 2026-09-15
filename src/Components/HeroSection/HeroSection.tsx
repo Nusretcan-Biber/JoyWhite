@@ -49,7 +49,7 @@ const HeroSection = () => {
             {/* <h1 className="hero-bg-title">JOYWHITE</h1> */}
             <div className="absolute inset-0 custom-gradient"></div>
 
-            <div className="container h-full mx-auto flex items-center justify-center relative z-10 px-20 md:px-5">
+            <div className="container h-full mx-auto flex items-center justify-center relative z-10 px-8 md:px-20">
               <div className="hero-content">
                   <p className="hero-subtitle">Ski & Snowboard</p>
                   <h2 className="hero-title">Joy White Kayak Kulübü</h2>

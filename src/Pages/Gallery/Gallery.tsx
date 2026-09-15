@@ -9,14 +9,25 @@ import { InstaSection } from "../../Components/InstaSection/InstaSection";
 
 const Gallery = () => {
 
-  const images = Array.from({ length: 37 }, (_, i) => {
-    return {
-      original: `/images/galery/resim${i + 1}.jpg`,
-      thumbnail: `/images/galery/resim${i + 1}.jpg`,
-      originalAlt: `JoyWhite kayak kampından fotoğraf ${i + 1}`,
-      thumbnailAlt: `JoyWhite kayak kampından fotoğraf ${i + 1} küçük önizleme`,
-    };
-  });
+  const oldPhotos = Array.from({ length: 37 }, (_, i) => `resim${i + 1}`);
+  const newPhotos = Array.from({ length: 7 }, (_, i) => `joywhite${i + 1}`);
+
+  // Yeni fotoğrafları ilk sıralara serpiştiriyoruz, geri kalanı eski sırasında devam ediyor.
+  const fileNames = [
+    oldPhotos[0], newPhotos[0], oldPhotos[1], oldPhotos[2], newPhotos[1],
+    oldPhotos[3], newPhotos[2], oldPhotos[4], oldPhotos[5], newPhotos[3],
+    oldPhotos[6], oldPhotos[7], newPhotos[4], oldPhotos[8], oldPhotos[9],
+    newPhotos[5], oldPhotos[10], oldPhotos[11], newPhotos[6], oldPhotos[12],
+    oldPhotos[13],
+    ...oldPhotos.slice(14),
+  ];
+
+  const images = fileNames.map((name, i) => ({
+    original: `/images/galery/${name}.jpg`,
+    thumbnail: `/images/galery/${name}.jpg`,
+    originalAlt: `JoyWhite kayak kampından fotoğraf ${i + 1}`,
+    thumbnailAlt: `JoyWhite kayak kampından fotoğraf ${i + 1} küçük önizleme`,
+  }));
 
   return (
     <>

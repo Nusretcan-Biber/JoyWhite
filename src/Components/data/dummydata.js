@@ -27,7 +27,7 @@ export const campsData = [
   },
   {
     id: 2,
-    cover: "/images/camps/Kampiki.jpg",
+    cover: "/images/camps/joywhite-camp1.jpg",
     name: "JoyWhite Kayak Kulübü",
     Location: "Sarıkamış/Kars",
     BeginDate: "24 Aralık",
@@ -125,7 +125,7 @@ export const campsData = [
   },
   {
     id: 7,
-    cover: "/images/camps/kampyedi.jpg",
+    cover: "/images/camps/joywhite-camp2.jpg",
     name: "JoyWhite Kayak Kulübü",
     badge: "4 Gün",
     Location: "Sarıkamış/Kars",
@@ -224,7 +224,7 @@ export const campsData = [
   },
   {
     id: 12,
-    cover: "/images/camps/kampbes.jpg",
+    cover: "/images/camps/joywhite-camp3.jpg",
     name: "JoyWhite Kayak Kulübü",
     Location: "Sarıkamış/Kars",
     BeginDate: "25 Şubat",
@@ -323,7 +323,7 @@ export const campsData = [
   },
   {
     id: 17,
-    cover: "/images/camps/kampuc.jpg",
+    cover: "/images/camps/joywhite-camp1.jpg",
     name: "JoyWhite Kayak Kulübü",
     badge: "Sezon Kapanışı",
     Location: "Sarıkamış/Kars",

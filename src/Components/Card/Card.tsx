@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight, faLocationDot, faCalendarDays } from '@fortawesome/free-solid-svg-icons';
 import './Card.css'
 import ScrollAnimation from 'react-animate-on-scroll';
 
@@ -26,33 +26,31 @@ interface CardProps {
 const Card: React.FC<CardProps> = ({ camp }) => {
     return (
         <ScrollAnimation animateIn="fadeIn" animateOnce={false}>
-            <div className='card'>
-                <div className="card-content">
-                    <div className="card-img">
-                        <img src={camp.cover} alt={camp.name} />
-                        {camp.badge && <span className="card-badge">{camp.badge}</span>}
-                    </div>
+            <Link
+                to={`/Training/${camp.id}`}
+                className="card"
+                aria-label={`${camp.name} - ${camp.Location}, ${camp.BeginDate} - ${camp.EndDate}`}
+            >
+                <div className="card-img">
+                    <img src={camp.cover} alt={camp.name} />
+                    {camp.badge && <span className="card-badge">{camp.badge}</span>}
+                    <div className="card-scrim" aria-hidden="true" />
                     <div className="card-body">
-                        <Link to={`/Training/${camp.id}`}><h3 className="card-title">
-                            {camp.name}
-                        </h3>
-                        </Link>
-                        <Link to={`/Training/${camp.id}`}>
-                            <p className="card-info">
-                                {camp.Location}
-                            </p>
-                        </Link>
-                        <Link to={`/Training/${camp.id}`}>
-                            <p className="card-info">
-                                {camp.BeginDate} - {camp.EndDate}
-                            </p>
-                        </Link>
+                        <h3 className="card-title">{camp.name}</h3>
+                        <p className="card-info">
+                            <FontAwesomeIcon icon={faLocationDot} className="card-info-icon" />
+                            {camp.Location}
+                        </p>
+                        <p className="card-info">
+                            <FontAwesomeIcon icon={faCalendarDays} className="card-info-icon" />
+                            {camp.BeginDate} - {camp.EndDate}
+                        </p>
                     </div>
-                    <Link to={`/Training/${camp.id}`} className="card-link" aria-label={`${camp.name} kamp detayına git`}>
+                    <span className="card-arrow" aria-hidden="true">
                         <FontAwesomeIcon icon={faArrowRight} />
-                    </Link>
+                    </span>
                 </div>
-            </div>
+            </Link>
         </ScrollAnimation>
     )
 }
