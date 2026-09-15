@@ -46,6 +46,20 @@ a:active {
   --dark-blue: #050815;
 }
 
+/* Ana sayfa kaydırma çubuğu SlalomScroll bileşeniyle değiştiriliyor;
+   masaüstünde native scrollbar gizleniyor (mobilde ve 900px altında
+   SlalomScroll kendini gizliyor, orada native scrollbar/OS göstergesi kalır). */
+@media (min-width: 901px) {
+  html {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  html::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 ::-webkit-scrollbar {
   width: 7px;
 }

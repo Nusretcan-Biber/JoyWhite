@@ -1,0 +1,74 @@
+.slalom-track {
+    position: fixed;
+    top: 110px;
+    bottom: 150px;
+    right: 6px;
+    width: 40px;
+    z-index: 45;
+    cursor: pointer;
+    touch-action: none;
+}
+
+.slalom-track__svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+.slalom-track__path {
+    fill: none;
+    stroke: rgba(20, 90, 159, 0.4);
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-dasharray: 2 8;
+    vector-effect: non-scaling-stroke;
+}
+
+.slalom-track__pole {
+    position: absolute;
+    left: 50%;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.35);
+}
+
+.slalom-track__pole.is-right {
+    margin-left: 13px;
+    background-color: #dc2626;
+}
+
+.slalom-track__pole.is-left {
+    margin-left: -13px;
+    background-color: #2563eb;
+}
+
+.slalom-track__skier {
+    position: absolute;
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: #fff;
+    font-size: 1rem;
+    box-shadow: 0 6px 16px rgba(25, 0, 74, 0.4);
+    cursor: grab;
+    touch-action: none;
+}
+
+.slalom-track__skier:active {
+    cursor: grabbing;
+}
+
+@media (max-width: 900px) {
+    .slalom-track {
+        display: none;
+    }
+}

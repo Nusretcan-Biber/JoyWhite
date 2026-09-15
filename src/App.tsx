@@ -12,6 +12,7 @@ import BizKimizPage from './Pages/BizKimiz/BizKimizPage';
 import NotFoundPage from './Pages/NotFound/NotFoundPage';
 import ScrollTop from './Components/ScrollTop/ScrollTop';
 import FloatingWhatsapp from './Components/FloatingWhatsapp/FloatingWhatsapp';
+import SlalomScroll from './Components/SlalomScroll/SlalomScroll';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
@@ -29,6 +30,7 @@ function App() {
     <>
       <ScrollTop />
       <FloatingWhatsapp />
+      <SlalomScroll />
       <Toaster />
       <Routes>
         <Route path="*" element={<Navigate to="/404" replace />} />
