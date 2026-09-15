@@ -4,17 +4,17 @@ import ScrollAnimation from "react-animate-on-scroll";
 
 const Contact = () => {
   return (
-    <section className="py-20 bg-white dark:bg-gray-800" id="about">
+    <section className="py-20 bg-white">
       <div className="container px-6 pt-10 mx-auto">
         <ScrollAnimation animateIn="fadeInDown" animateOnce={false}>
-          <h2 className="text-3xl font-semibold text-center text-gray-800 capitalize lg:text-4xl dark:text-white">
+          <h2 className="text-3xl font-semibold text-center text-gray-800 capitalize lg:text-4xl">
             Hakkımızda
           </h2>
 
           <div className="flex justify-center mx-auto mt-6">
-            <span className="inline-block w-40 h-1 bg-blue-500 rounded-full"></span>
-            <span className="inline-block w-3 h-1 mx-1 bg-blue-500 rounded-full"></span>
-            <span className="inline-block w-1 h-1 bg-blue-500 rounded-full"></span>
+            <span className="inline-block w-40 h-1 bg-logoBlue rounded-full"></span>
+            <span className="inline-block w-3 h-1 mx-1 bg-logoBlue rounded-full"></span>
+            <span className="inline-block w-1 h-1 bg-logoBlue rounded-full"></span>
           </div>
         </ScrollAnimation>
 
@@ -39,24 +39,24 @@ const Contact = () => {
           </div>
           <div className="md:w-1/2">
             <ScrollAnimation animateIn="fadeInRight" animateOnce={false}>
-              <h2 className="text-4xl font-semibold text-gray-700 capitalize dark:text-white">
+              <h2 className="text-4xl font-semibold text-gray-700 capitalize">
                 JoyWhite Kayak Kulübü
               </h2>
 
-              <p className="mt-4 text-gray-600 dark:text-gray-300">
+              <p className="mt-4 text-gray-600">
                 Kayak eğitimi alanında uzmanlaşmış ekibimiz, çocuklarınızın
                 güvenliğini ve mutluluğunu öncelikli hedef olarak
                 belirlemektedir. Eğlenceli bir ortamda öğrenim sağlarken, sporun
                 keyfini çıkarmalarını sağlıyoruz.
               </p>
 
-              <p className="mt-4 text-gray-600 dark:text-gray-300">
+              <p className="mt-4 text-gray-600">
                 Sosyal medyalarımızdan bizimle iletişime geçerek, çocuklarınız
                 için en iyi kayak deneyimini nasıl sunabileceğimizi
                 öğrenebilirsiniz.
               </p>
 
-              <p className="mt-4 text-gray-600 dark:text-gray-300">
+              <p className="mt-4 text-gray-600">
                 Kars'ın kalbinde yer alan köklü kayak kulübümüz, çocukların kayak
                 eğitimi alarak hem eğlenip hem de güvenli bir şekilde
                 öğrenmelerini sağlamak için özenle hazırlanmış programlar

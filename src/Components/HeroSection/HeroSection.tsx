@@ -18,26 +18,10 @@ const HeroSection = () => {
   };
 
   const slides = [
-    {
-      image: "/images/staticImages/hero-4.jpg",
-      title: "UZMAN ANTRENÖRLER",
-      text: "JoyWhite Kayak Kulübü'ne katılın ve karla kaplı manzaraların huzurunda, en iyi antrenörlerle kayak becerilerinizi geliştirin."
-    },
-    {
-      image: "/images/staticImages/hero-2.jpg",
-      title: "UNUTULMAZ DENEYİM",
-      text: "JoyWhite Kayak Kulübü ile unutulmaz bir maceraya atılın, yamaçlarda her an heyecan ve neşe dolu olsun."
-    },
-    {
-      image: "/images/staticImages/photo-hero.jpg",
-      title: "EĞLENCE VE SPOR",
-      text: "JoyWhite Kayak Kulübü'nde eğlenirken spor yapın ve kayak yeteneklerinizi geliştirin, hayatınızın en iyi kış tatilini yaşayın."
-    },
-    {
-      image: "/images/staticImages/parallax-1.jpg",
-      title: "KAYAK KAMPIMIZ",
-      text: "JoyWhite Kayak Kulübü'nün kayak kamplarına katılın ve kayak becerilerinizi geliştirirken, doğayla iç içe kış sporlarını keşfedin."
-    }
+    { image: "/images/staticImages/hero-4.jpg", title: "Uzman antrenörler eşliğinde kayak eğitimi" },
+    { image: "/images/staticImages/hero-2.jpg", title: "Sarıkamış'ta unutulmaz bir kış deneyimi" },
+    { image: "/images/staticImages/photo-hero.jpg", title: "Eğlenceli ve güvenli kış sporları" },
+    { image: "/images/staticImages/parallax-1.jpg", title: "JoyWhite kayak kampı" },
   ];
 
   return (
@@ -68,8 +52,8 @@ const HeroSection = () => {
             <div className="container h-full mx-auto flex items-center justify-center relative z-10 px-20 md:px-5">
               <div className="hero-content">
                   <p className="hero-subtitle">Ski & Snowboard</p>
-                  <h2 className="hero-title">Joy White Kış Kampı</h2>
-                  <p className="hero-title transparent-text">Sarıkamış&apos;ta Kayak, Sanat ve WinterLabs</p>
+                  <h2 className="hero-title">Joy White Kayak Kulübü</h2>
+                  <p className="hero-title transparent-text">Sarıkamış&apos;ta Bir Kış Masalı</p>
               </div>
 
             </div>

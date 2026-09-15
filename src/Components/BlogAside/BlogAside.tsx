@@ -1,28 +1,29 @@
 import React from 'react'
 import "./BlogAside.css"
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faNewspaper } from '@fortawesome/free-solid-svg-icons'
 
 export function BlogAside() {
+    const { pathname } = useLocation();
 
     const blog = [
         {
-            title: "Kayak Sporu hakkında bilinmesi gerekenler",
+            title: "Kayak Sporu Hakkında Bilinmesi Gerekenler",
             link: "/KayakSporuHakkindaBilinmesiGerekenler"
         },
         {
-            title: "Kayakçılar için önemli güvenlik kuralları",
+            title: "Kayakçılar İçin Önemli Güvenlik Kuralları",
             link: "/KayakcilarIcinOnemliGuvenlikKurallari"
         },
         {
-            title: "Sarıkamış kayak merkezi",
+            title: "Sarıkamış Kayak Merkezi",
             link: "/SarikamisKayakMerkezi"
         },
     ]
 
     const findActive = (link: string) => {
-        return window.location.pathname === link ? "active" : ""
+        return pathname === link ? "active" : ""
     }
 
     return (
@@ -30,9 +31,9 @@ export function BlogAside() {
             <div className="blog-aside-header">
                 <h1 className="blog-aside-title">Son Yazılar</h1>
                 <div className="flex">
-                    <span className="inline-block w-40 h-1 bg-blue-500 rounded-full"></span>
-                    <span className="inline-block w-3 h-1 mx-1 bg-blue-500 rounded-full"></span>
-                    <span className="inline-block w-1 h-1 bg-blue-500 rounded-full"></span>
+                    <span className="inline-block w-40 h-1 bg-logoBlue rounded-full"></span>
+                    <span className="inline-block w-3 h-1 mx-1 bg-logoBlue rounded-full"></span>
+                    <span className="inline-block w-1 h-1 bg-logoBlue rounded-full"></span>
                 </div>
             </div>
             <div className="blog-aside-content mt-8">

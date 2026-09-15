@@ -87,13 +87,12 @@ div[data-testid="table-element"] {
 .reach-out-button {
     display: flex;
     align-items: center;
-    /* justify-content: center; */
-    gap: .5rem;
+    justify-content: center;
     border-radius: 50px;
     width: 50px;
     height: 50px;
     padding: 0 1rem;
-    white-space: nowrap; 
+    white-space: nowrap;
     overflow: hidden;
     background-color: #f0f0f0;
     position: relative;
@@ -107,13 +106,18 @@ div[data-testid="table-element"] {
     justify-content: center;
     align-items: center;
     font-size: 1.2rem;
+    flex-shrink: 0;
     transition: all .3s;
 }
 
 .reach-out-button span {
+    display: inline-block;
     color: #fff;
+    max-width: 0;
+    margin-left: 0;
+    overflow: hidden;
     opacity: 0;
-    transition: all .3s;
+    transition: max-width .3s, margin-left .3s, opacity .3s;
 }
 
 .reach-out-button:hover {
@@ -127,7 +131,39 @@ div[data-testid="table-element"] {
 }
 
 .reach-out-button:hover span {
+    max-width: 100px;
+    margin-left: .5rem;
     opacity: 1;
+}
+
+.price-whatsapp-button {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    padding: .55rem 1.1rem;
+    border-radius: 50px;
+    background-color: #25D366;
+    color: #fff;
+    font-size: .85rem;
+    font-weight: 600;
+    white-space: nowrap;
+    text-decoration: none;
+    transition: all .3s;
+}
+
+.price-whatsapp-button:hover {
+    background-color: #1ebe5d;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(37, 211, 102, 0.4);
+}
+
+.price-whatsapp-icon {
+    font-size: 1.05rem;
+    transition: transform .3s;
+}
+
+.price-whatsapp-button:hover .price-whatsapp-icon {
+    transform: rotate(-8deg) scale(1.1);
 }
 
 @media (max-width: 768px) {

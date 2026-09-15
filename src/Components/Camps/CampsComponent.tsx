@@ -7,18 +7,18 @@ const CampsComponent = () => {
   return (
     <div id="camps">
       {/* Boş div yerine absolute konumlandırma ile arka planın bir kısmı renklendirilecek */}
-      <section className="bg-white dark:bg-gray-900 py-12">
+      <section className="bg-white py-12">
         <div className="container px-6 py-10 mx-auto">
-          <h2 className="text-3xl font-semibold text-center text-gray-800 capitalize lg:text-4xl dark:text-white">
+          <h2 className="text-3xl font-semibold text-center text-gray-800 capitalize lg:text-4xl">
             Eğitimlerimiz
           </h2>
           <div className="flex justify-center mx-auto mt-6">
-            <span className="inline-block w-40 h-1 bg-blue-500 rounded-full"></span>
-            <span className="inline-block w-3 h-1 mx-1 bg-blue-500 rounded-full"></span>
-            <span className="inline-block w-1 h-1 bg-blue-500 rounded-full"></span>
+            <span className="inline-block w-40 h-1 bg-logoBlue rounded-full"></span>
+            <span className="inline-block w-3 h-1 mx-1 bg-logoBlue rounded-full"></span>
+            <span className="inline-block w-1 h-1 bg-logoBlue rounded-full"></span>
           </div>
 
-          <p className="mt-10 text-center text-gray-500 dark:text-gray-300">
+          <p className="mt-10 text-center text-gray-500">
             Çocuklarınız için özel olarak tasarlanmış kayak eğitimlerimizde,
             profesyonel eğitmenler eşliğinde güvenli ve eğlenceli bir öğrenme
             deneyimi sunuyoruz. Kayak becerilerini geliştirmek ve kış

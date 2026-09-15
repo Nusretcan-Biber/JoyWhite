@@ -13,9 +13,11 @@ const Gallery = () => {
     return {
       original: `/images/galery/resim${i + 1}.jpg`,
       thumbnail: `/images/galery/resim${i + 1}.jpg`,
+      originalAlt: `JoyWhite kayak kampından fotoğraf ${i + 1}`,
+      thumbnailAlt: `JoyWhite kayak kampından fotoğraf ${i + 1} küçük önizleme`,
     };
   });
-  
+
   return (
     <>
       <NavbarComponent />
@@ -39,8 +41,8 @@ const Gallery = () => {
             items={images}
             showBullets={true}
             showIndex={true}
-            autoPlay={true}
-            slideInterval={3000}
+            autoPlay={false}
+            lazyLoad={true}
           />
         </div>
       </section>

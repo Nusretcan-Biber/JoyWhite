@@ -1,7 +1,5 @@
 import React from "react";
-import { FaSkiing } from "react-icons/fa";
-import { GiEskimo } from "react-icons/gi";
-import { FaChild } from "react-icons/fa";
+import { FaUsers, FaShieldAlt, FaSuitcaseRolling } from "react-icons/fa";
 import "./Services.css";
 import ScrollAnimation from "react-animate-on-scroll";
 
@@ -9,22 +7,22 @@ const Services = () => {
 
   const services = [
     {
-      title: "Eğlenceli Kayak Eğitim Programı",
+      title: "Küçük Grup Eğitimleri",
       description:
-        "Deneyimli eğitmenler eşliğinde güvenli ve eğlenceli bir ortamda kayak becerilerini geliştirin. Kayak sporuna adım atmak isteyen çocuklar için ideal!",
-      icon: <FaSkiing />,
+        "En fazla 5 kişilik gruplarda, seviyeye uygun eğitim planıyla çalışıyoruz. Her çocuk, eğitmeninden yeterli birebir ilgiyi alır.",
+      icon: <FaUsers />,
     },
     {
-      title: "Kış Sporları Etkinlikleri",
+      title: "Ücretsiz Ekipman & SkiPass",
       description:
-        "Yıl boyunca düzenlenen etkinliklerimizle, çocuklar hem spor yapıyor hem de arkadaşlıklarını güçlendiriyor. Kış sporlarının keyfini çıkarın!",
-      icon: <GiEskimo />,
+        "Çocuklar için kayak ekipmanı ve SkiPass kamp kapsamında ücretsizdir. Ailenin tek yapması gereken kişisel koruyucu eşyaları getirmek.",
+      icon: <FaShieldAlt />,
     },
     {
-      title: "Çocuklar İçin Kayak Eğitimi",
+      title: "Güvenli Seyahat & Konaklama",
       description:
-        "Kayak eğitimlerimizde çocuklar becerilerini geliştirirken, doğayla iç içe kış sporlarını keşfediyor. Eğlenceli ve öğretici bir deneyim!",
-      icon: <FaChild />
+        "Transfer, konaklama ve resmi süreçler Pavone Travel Agency güvencesiyle yürütülür; ailenizin tek odağı çocuğunuzun kamp deneyimi olur.",
+      icon: <FaSuitcaseRolling />
     }
   ];
 
@@ -33,11 +31,11 @@ const Services = () => {
 
     <div className="py-16 parallax-bg"
     >
-      <h2 className="text-center font-bold text-3xl lg:text-4xl">Faaliyetlerimiz</h2>
+      <h2 className="text-center font-bold text-3xl lg:text-4xl">Neden Joy White?</h2>
       <div className="flex justify-center mx-auto mt-6">
-        <span className="inline-block w-40 h-1 bg-blue-500 rounded-full"></span>
-        <span className="inline-block w-3 h-1 mx-1 bg-blue-500 rounded-full"></span>
-        <span className="inline-block w-1 h-1 bg-blue-500 rounded-full"></span>
+        <span className="inline-block w-40 h-1 bg-logoBlue rounded-full"></span>
+        <span className="inline-block w-3 h-1 mx-1 bg-logoBlue rounded-full"></span>
+        <span className="inline-block w-1 h-1 bg-logoBlue rounded-full"></span>
       </div>
       <section className="text-gray-600 body-font">
         <div className="container px-5 grid grid-cols-1 gap-20 md:gap-24 lg:gap-12 mx-auto lg:grid-cols-3 py-16 mt-16">
@@ -52,7 +50,7 @@ const Services = () => {
                 key={index}
                 className="flex flex-col items-center justify-center p-12 bg-KırıkBeyaz rounded-lg shadow-lg h-full transform transition-all duration-200 hover:scale-105 hover:shadow-2xl"
               >
-                <div className="sm:w-32 sm:h-32 text-5xl h-24 w-24 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 flex-shrink-0 mb-4 sm:-mt-28 -mt-24">
+                <div className="sm:w-32 sm:h-32 text-5xl h-24 w-24 inline-flex items-center justify-center rounded-full bg-SecondaryColor text-PrimaryColor flex-shrink-0 mb-4 sm:-mt-28 -mt-24">
                   {service.icon}
                 </div>
                 <h2 className="mb-4 text-xl font-bold text-black text-center">

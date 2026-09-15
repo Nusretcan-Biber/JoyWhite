@@ -9,11 +9,12 @@ interface Camp {
     id: number;
     cover: string;
     name: string;
+    badge?: string;
     Location: string;
     BeginDate: string;
     EndDate: string;
     Price: {
-        adultChildCombination: { type: string; price: string }[];
+        adultChildCombination: { type: string; price?: string }[];
     };
     description: string;
 }
@@ -29,6 +30,7 @@ const Card: React.FC<CardProps> = ({ camp }) => {
                 <div className="card-content">
                     <div className="card-img">
                         <img src={camp.cover} alt={camp.name} />
+                        {camp.badge && <span className="card-badge">{camp.badge}</span>}
                     </div>
                     <div className="card-body">
                         <Link to={`/Training/${camp.id}`}><h3 className="card-title">
@@ -46,7 +48,7 @@ const Card: React.FC<CardProps> = ({ camp }) => {
                             </p>
                         </Link>
                     </div>
-                    <Link to={`/Training/${camp.id}`} className="card-link">
+                    <Link to={`/Training/${camp.id}`} className="card-link" aria-label={`${camp.name} kamp detayına git`}>
                         <FontAwesomeIcon icon={faArrowRight} />
                     </Link>
                 </div>

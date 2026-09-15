@@ -4,14 +4,17 @@ import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
+import { PHONE_TEL_HREF, buildWhatsappLink } from '../../config/contact';
 
 export function FooterComponent() {
 
-  const whatsappMessage = `Merhaba, JoyWhite Kayak Kulübü hakkında bilgi almak istiyorum.`;
+  const whatsappLink = buildWhatsappLink('Merhaba, JoyWhite Kayak Kulübü hakkında bilgi almak istiyorum.');
 
-  const whatsappLink = `https://api.whatsapp.com/send?phone=905056460234&text=${encodeURIComponent(
-    whatsappMessage
-  )}`; // 123456789 kısmını kendi WhatsApp numaranızla değiştirin
+  const socialLinks = [
+    { icon: faPhone, path: PHONE_TEL_HREF, label: 'Telefon' },
+    { icon: faWhatsapp, path: whatsappLink, label: 'WhatsApp' },
+    { icon: faInstagram, path: 'https://www.instagram.com/joywhite365/', label: 'Instagram' },
+  ]
 
   const footerLinks = [
     {
@@ -19,6 +22,7 @@ export function FooterComponent() {
       links: [
         { title: 'Anasayfa', path: '/' },
         { title: 'Eğitimlerimiz', path: '/Trainings' },
+        { title: 'Biz Kimiz', path: '/Biz-Kimiz' },
         { title: 'İletişim', path: '/Contact' },
         { title: 'Galeri', path: '/Gallery' },
       ]
@@ -26,58 +30,64 @@ export function FooterComponent() {
     {
       title: 'Blog',
       links: [
-        { title: 'Kayak Sporu hakkında bilinmesi gerekenler', path: '/KayakSporuHakkindaBilinmesiGerekenler' },
+        { title: 'Kayak sporu hakkında bilinmesi gerekenler', path: '/KayakSporuHakkindaBilinmesiGerekenler' },
         { title: 'Kayakçılar için önemli güvenlik kuralları', path: '/KayakcilarIcinOnemliGuvenlikKurallari' },
         { title: 'Sarıkamış kayak merkezi', path: '/SarikamisKayakMerkezi' },
-      ]
-
-    },
-    {
-      title: 'Sosyal',
-      icon: true,
-      links: [
-        { icon: faPhone, path: 'tel:+905056460234' },
-        { icon: faWhatsapp, path: whatsappLink },
-        { icon: faInstagram, path: 'https://www.instagram.com/joywhite365/' },
       ]
     },
   ]
 
   return (
-    <footer className="footer px-4">
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-4 py-12">
-        <div className="footer__logo logo">
-          <Link to="/"><img src="/images/staticImages/joywhite-logo.png" alt="JoyWhite Kayak Kulübü" /></Link>
-        </div>
-        {
-          footerLinks.map((item, index) => (
-            <div className="footer__links__item" key={index}>
+    <footer className="footer">
+      <div className="footer__top">
+        <div className="footer__container footer__grid">
+          <div className="footer__brand">
+            <Link to="/" className="footer__logo">
+              <img src="/images/staticImages/joywhite-logo-white.png" alt="JoyWhite Kayak Kulübü" />
+            </Link>
+            <p className="footer__tagline">
+              Sarıkamış'ta çocuklara güvenli, eğlenceli ve yaratıcı bir kış sporları deneyimi sunuyoruz.
+            </p>
+            <ul className="footer__social">
+              {socialLinks.map((item) => (
+                <li key={item.label}>
+                  <a
+                    href={item.path}
+                    target={item.path.startsWith('http') ? '_blank' : undefined}
+                    rel="noreferrer"
+                    aria-label={item.label}
+                    className={`footer__social-link footer__social-link--${item.label.toLowerCase()}`}
+                  >
+                    <FontAwesomeIcon icon={item.icon} />
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {footerLinks.map((item) => (
+            <div className="footer__links-item" key={item.title}>
               <h3>{item.title}</h3>
-              <ul className={`${item.icon ? 'icon' : 'text'}`}>
-                {
-                  item.links.map((link, index) => (
-                    <li key={index} className={`${'icon' in link ? 'icon' : 'text'}`}>
-                      {
-                        link.path.includes('http') ?
-                          <a href={link.path} target="_blank" rel="noreferrer">{'icon' in link ? <FontAwesomeIcon icon={link.icon} /> : link.title}</a>
-                          :
-                          <Link to={link.path}>{'title' in link ? link.title : <FontAwesomeIcon icon={link.icon} />}</Link>
-                      }
-                    </li>
-                  ))
-                }
+              <ul>
+                {item.links.map((link) => (
+                  <li key={link.path}>
+                    <Link to={link.path}>{link.title}</Link>
+                  </li>
+                ))}
               </ul>
             </div>
-          ))
-        }
+          ))}
+        </div>
       </div>
+
       <div className="footer__bottom">
-        <div className="container mx-auto">
-          <p>© 2024 JoyWhite Kayak Kulübü. Tüm hakları saklıdır.</p>
+        <div className="footer__container footer__bottom-inner">
+          <p className="footer__copyright">
+            © {new Date().getFullYear()} JoyWhite Kayak Kulübü. Tüm hakları saklıdır.
+          </p>
           <p className="footer__agency">
-            Pavone Travel Agency, Joy White Kayak Kulübünün resmî seyahat acentesidir.
-            <br />
-            TÜRSAB Belge No: 18202 ·{" "}
+            <strong>Pavone Travel Agency</strong>, Joy White Kayak Kulübünün resmî seyahat acentesidir · TÜRSAB Belge No: 18202
+            {" "}
             <a href="https://pavonemice.com/" target="_blank" rel="noreferrer">
               pavonemice.com
             </a>

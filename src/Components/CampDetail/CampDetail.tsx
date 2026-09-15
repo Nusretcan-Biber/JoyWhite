@@ -5,13 +5,14 @@ import { campsData } from "../data/dummydata"; // campsData'yı import ettik
 import { NavbarComponent } from "../Navbar/NavbarComponent";
 import { FooterComponent } from "../Footer/FooterComponent";
 import { Tabs, Table, Card, ListGroup } from "flowbite-react";
-import { HiAdjustments, HiUserCircle } from "react-icons/hi";
+import { HiAdjustments, HiInformationCircle } from "react-icons/hi";
 import { MdDashboard } from "react-icons/md";
 import './CampDetail.css';
 import { faSnowflake, faSkiing, faPhone, faChild } from "@fortawesome/free-solid-svg-icons";
 import { faInstagram, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { faCreditCard, faUsers } from "@fortawesome/free-solid-svg-icons";
 import ScrollAnimation from "react-animate-on-scroll";
+import { PHONE_TEL_HREF, buildWhatsappLink } from "../../config/contact";
 
 const CampDetail = () => {
   const { id } = useParams();
@@ -22,13 +23,10 @@ const CampDetail = () => {
     return <div className="text-center">Eğitim bilgisi bulunamadı.</div>;
   }
 
-  // WhatsApp mesajı için metin oluştur
-  const whatsappMessage = `Merhaba, ${camp.BeginDate} başlangıç tarihli ${camp.name} hakkında bilgi almak istiyorum.`;
-
   // WhatsApp linkini oluştur
-  const whatsappLink = `https://api.whatsapp.com/send?phone=905056460234&text=${encodeURIComponent(
-    whatsappMessage
-  )}`; // 123456789 kısmını kendi WhatsApp numaranızla değiştirin
+  const whatsappLink = buildWhatsappLink(
+    `Merhaba, ${camp.BeginDate} başlangıç tarihli ${camp.name} hakkında bilgi almak istiyorum.`
+  );
 
 
   const scheduleData = [
@@ -97,7 +95,7 @@ const CampDetail = () => {
                 <div className="reach-out">
                   <h3 className="text-PrimaryColor font-bold">Bilgi ve Rezervasyon:</h3>
                   <div className="reach-out-buttons">
-                    <a href="tel:+905056460234" className="reach-out-button">
+                    <a href={PHONE_TEL_HREF} className="reach-out-button">
                       <FontAwesomeIcon icon={faPhone} className="reach-out-icon" />
                       <span>Ara</span>
                     </a>
@@ -117,15 +115,31 @@ const CampDetail = () => {
                 <Table>
                   <Table.Head>
                     <Table.HeadCell>Katılımcı</Table.HeadCell>
-                    <Table.HeadCell>Ücret (TL)</Table.HeadCell>
+                    <Table.HeadCell>Fiyat &amp; Rezervasyon</Table.HeadCell>
                   </Table.Head>
                   <Table.Body className="divide-y">
-                    {camp.Price.adultChildCombination.map((priceOption) => (
-                      <Table.Row key={priceOption.type}>
-                        <Table.Cell>{priceOption.type}</Table.Cell>
-                        <Table.Cell>{priceOption.price} TL</Table.Cell>
-                      </Table.Row>
-                    ))}
+                    {camp.Price.adultChildCombination.map((priceOption) => {
+                      const priceWhatsappLink = buildWhatsappLink(
+                        `Merhaba, ${camp.BeginDate} - ${camp.EndDate} tarihleri arasındaki ${camp.name} için ${priceOption.type} seçeneğiyle rezervasyon fiyatı almak istiyorum.`
+                      );
+
+                      return (
+                        <Table.Row key={priceOption.type}>
+                          <Table.Cell>{priceOption.type}</Table.Cell>
+                          <Table.Cell>
+                            <a
+                              href={priceWhatsappLink}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="price-whatsapp-button"
+                            >
+                              <FontAwesomeIcon icon={faWhatsapp} className="price-whatsapp-icon" />
+                              <span>Rezervasyon Yap</span>
+                            </a>
+                          </Table.Cell>
+                        </Table.Row>
+                      );
+                    })}
                   </Table.Body>
                 </Table>
                 </ScrollAnimation>
@@ -136,13 +150,13 @@ const CampDetail = () => {
             <ScrollAnimation animateIn="fadeInUp" animateOnce={false} className="mt-24">
             <div>
               <Tabs className="detail-tabs" variant="fullWidth">
-                <Tabs.Item active title="Açıklama" icon={HiUserCircle}>
+                <Tabs.Item active title="Açıklama" icon={HiInformationCircle}>
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     <div>
                       <h1 className="text-PrimaryColor font-bold p-2">
                         Kimler katılabilir?
                       </h1>
-                      <h1 className=" text-gray-500 dark:text-gray-400 p-2">
+                      <h1 className=" text-gray-500 p-2">
                         4-12 yaş arası çocuklar katılabilir. 09:00-11:00 /
                         13:00-15:00 arası eğitmenlerimizle geçirebilir.
                       </h1>
@@ -151,35 +165,10 @@ const CampDetail = () => {
                         Eğitim Paketimize Neler Dahil?
                       </h1>
 
-                      {/* Bilgilendirici Metin Bölümleri */}
                       <div className="space-y-5 mb-5">
-                        {/* <div className="flex items-start space-x-2">
-                          <div className="sm:w-16 sm:h-16 text-1xl h-10 w-10 sm:mr-5 flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 flex-shrink-0 md:text-2xl transition-transform duration-200 ease-in-out hover:scale-110">
-                            <FontAwesomeIcon icon={faShuttleVan} className="text-blue-500" />
-                          </div>
-                          <div>
-                            <h3 className="text-lg font-semibold">Havalimanı Transferi</h3>
-                            <p>
-                              Havalimanından otelinize rahat ve güvenli bir transfer! 45 dakikalık yolculuk sırasında Sarıkamış’ın güzel manzaralarını keşfedin.
-                            </p>
-                          </div>
-                        </div> */}
-
-                        {/* <div className="flex items-start space-x-2">
-                          <div className="sm:w-16 sm:h-16 text-1xl h-10 w-10 sm:mr-5 flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 flex-shrink-0 md:text-2xl transition-transform duration-200 ease-in-out hover:scale-110">
-                            <FontAwesomeIcon icon={faHotel} className="text-blue-500" />
-                          </div>
-                          <div>
-                            <h3 className="text-lg font-semibold">Habitat Otel Konaklama</h3>
-                            <p>
-                              Sabah, öğle ve akşam yemekleri dahil, yerel ve uluslararası mutfaklardan lezzetler ile konforlu bir konaklama deneyimi sunulmaktadır.
-                            </p>
-                          </div>
-                        </div> */}
-
                         <div className="flex items-start space-x-2">
-                          <div className="sm:w-16 sm:h-16 text-1xl h-10 w-10 sm:mr-5 flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 flex-shrink-0 md:text-2xl transition-transform duration-200 ease-in-out hover:scale-110">
-                            <FontAwesomeIcon icon={faSnowflake} className="text-blue-500" />
+                          <div className="sm:w-16 sm:h-16 text-1xl h-10 w-10 sm:mr-5 flex items-center justify-center rounded-full bg-SecondaryColor text-PrimaryColor flex-shrink-0 md:text-2xl transition-transform duration-200 ease-in-out hover:scale-110">
+                            <FontAwesomeIcon icon={faSnowflake} className="text-PrimaryColor" />
                           </div>
                           <div>
                             <h3 className="text-lg font-semibold">Kristal Kar Kalitesi</h3>
@@ -189,21 +178,9 @@ const CampDetail = () => {
                           </div>
                         </div>
 
-                        {/* <div className="flex items-start space-x-2">
-                          <div className="sm:w-16 sm:h-16 text-1xl h-10 w-10 sm:mr-5 flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 flex-shrink-0 md:text-2xl transition-transform duration-200 ease-in-out hover:scale-110">
-                            <FontAwesomeIcon icon={faPlaneArrival} className="text-blue-500" />
-                          </div>
-                          <div>
-                            <h3 className="text-lg font-semibold">45 Dakika Ulaşım</h3>
-                            <p>
-                              Kars Havaalanı’ndan otele ulaşım yaklaşık 45 dakika sürmektedir. Rahat bir yolculuk ile otelinize kolayca varabilirsiniz.
-                            </p>
-                          </div>
-                        </div> */}
-
                         <div className="flex items-start space-x-2">
-                          <div className="sm:w-16 sm:h-16 text-1xl h-10 w-10 sm:mr-5 flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 flex-shrink-0 md:text-2xl transition-transform duration-200 ease-in-out hover:scale-110">
-                            <FontAwesomeIcon icon={faSkiing} className="text-blue-500" />
+                          <div className="sm:w-16 sm:h-16 text-1xl h-10 w-10 sm:mr-5 flex items-center justify-center rounded-full bg-SecondaryColor text-PrimaryColor flex-shrink-0 md:text-2xl transition-transform duration-200 ease-in-out hover:scale-110">
+                            <FontAwesomeIcon icon={faSkiing} className="text-PrimaryColor" />
                           </div>
                           <div>
                             <h3 className="text-lg font-semibold">Kayak Eğitimi</h3>
@@ -214,8 +191,8 @@ const CampDetail = () => {
                         </div>
 
                         <div className="flex items-start space-x-2">
-                          <div className="sm:w-16 sm:h-16 text-1xl h-10 w-10 sm:mr-5 flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 flex-shrink-0 md:text-2xl transition-transform duration-200 ease-in-out hover:scale-110">
-                            <FontAwesomeIcon icon={faChild} className="text-blue-500" />
+                          <div className="sm:w-16 sm:h-16 text-1xl h-10 w-10 sm:mr-5 flex items-center justify-center rounded-full bg-SecondaryColor text-PrimaryColor flex-shrink-0 md:text-2xl transition-transform duration-200 ease-in-out hover:scale-110">
+                            <FontAwesomeIcon icon={faChild} className="text-PrimaryColor" />
                           </div>
                           <div>
                             <h3 className="text-lg font-semibold">Ücretsiz Ekipman & SkiPass</h3>
@@ -226,8 +203,8 @@ const CampDetail = () => {
                         </div>
 
                         <div className="flex items-start space-x-2">
-                          <div className="sm:w-16 sm:h-16 text-1xl h-10 w-10 sm:mr-5 flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 flex-shrink-0 md:text-2xl transition-transform duration-200 ease-in-out hover:scale-110">
-                            <FontAwesomeIcon icon={faUsers} className="text-blue-500" />
+                          <div className="sm:w-16 sm:h-16 text-1xl h-10 w-10 sm:mr-5 flex items-center justify-center rounded-full bg-SecondaryColor text-PrimaryColor flex-shrink-0 md:text-2xl transition-transform duration-200 ease-in-out hover:scale-110">
+                            <FontAwesomeIcon icon={faUsers} className="text-PrimaryColor" />
                           </div>
                           <div>
                             <h3 className="text-lg font-semibold">Eğitim Grupları</h3>
@@ -238,8 +215,8 @@ const CampDetail = () => {
                         </div>
 
                         <div className="flex items-start space-x-2">
-                          <div className="sm:w-16 sm:h-16 text-1xl h-10 w-10 sm:mr-5 flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 flex-shrink-0 md:text-2xl transition-transform duration-200 ease-in-out hover:scale-110">
-                            <FontAwesomeIcon icon={faCreditCard} className="text-blue-500" />
+                          <div className="sm:w-16 sm:h-16 text-1xl h-10 w-10 sm:mr-5 flex items-center justify-center rounded-full bg-SecondaryColor text-PrimaryColor flex-shrink-0 md:text-2xl transition-transform duration-200 ease-in-out hover:scale-110">
+                            <FontAwesomeIcon icon={faCreditCard} className="text-PrimaryColor" />
                           </div>
                           <div>
                             <h3 className="text-lg font-semibold">Ödeme Şartları</h3>

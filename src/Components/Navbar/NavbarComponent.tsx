@@ -30,7 +30,7 @@ export function NavbarComponent({ useScrolled = false }) {
   return (
     <>
       <Navbar
-        className={`top-0 left-0 right-0 z-10 h-24 transition-all duration-2000 pt-5 ${isScrolled ? "fixed bg-KırıkBeyaz p-5 h-25 text-black" : "absolute bg-transparent text-white"
+        className={`top-0 left-0 right-0 z-10 h-24 transition-all duration-200 pt-5 ${isScrolled ? "fixed bg-KırıkBeyaz p-5 h-25 text-black" : "absolute bg-transparent text-white"
           }`}
       >
         <Navbar.Brand
@@ -89,6 +89,13 @@ export function NavbarComponent({ useScrolled = false }) {
             Eğitimlerimiz
           </Navbar.Link>
           <Navbar.Link
+            href="/Biz-Kimiz"
+            className={`text-md md:text-lg !transition-all !duration-100 hover:!text-Gri ${isScrolled || isMenuOpen ? "text-black" : "text-white"
+              }`}
+          >
+            Biz Kimiz
+          </Navbar.Link>
+          <Navbar.Link
             href="/Contact"
             className={`text-md md:text-lg !transition-all !duration-100 hover:!text-Gri ${isScrolled || isMenuOpen ? "text-black" : "text-white"
               }`}
@@ -121,19 +128,19 @@ export function NavbarComponent({ useScrolled = false }) {
               className="text-black border-none bg-KırıkBeyaz"
             >
               <Dropdown.Item
-                className="text-black hover:!text-white p-4 hover:!bg-black"
+                className="text-black hover:!text-white p-4 hover:!bg-PrimaryColor"
                 href="/KayakSporuHakkindaBilinmesiGerekenler"
               >
                 Kayak Sporu hakkında bilinmesi gerekenler
               </Dropdown.Item>
               <Dropdown.Item
-                className="text-black hover:!text-white p-4 hover:!bg-black"
+                className="text-black hover:!text-white p-4 hover:!bg-PrimaryColor"
                 href="/KayakcilarIcinOnemliGuvenlikKurallari"
               >
                 Kayakçılar için önemli güvenlik kuralları
               </Dropdown.Item>
               <Dropdown.Item
-                className="text-black hover:!text-white p-4 hover:!bg-black"
+                className="text-black hover:!text-white p-4 hover:!bg-PrimaryColor"
                 href="/SarikamisKayakMerkezi"
               >
                 Sarıkamış kayak merkezi

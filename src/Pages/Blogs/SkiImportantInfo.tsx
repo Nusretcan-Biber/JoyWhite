@@ -14,7 +14,7 @@ const SkiImportantInfo = () => {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
             <div className="blog-content col-span-1 md:col-span-8">
               <h1 className="sm:text-4xl text-3xl font-bold title-font text-gray-900 mb-8 text-center">
-                Kayakçılar için Önemli Güvenlik Kuralları
+                Kayakçılar İçin Önemli Güvenlik Kuralları
               </h1>
 
               <h2 className="text-2xl font-semibold mb-6">Kayak Tatili Güvenlik İpuçları</h2>
@@ -36,7 +36,7 @@ const SkiImportantInfo = () => {
                 Bu detaylar sadece bilgilendirme amaçlıdır. Sorularınız veya endişeleriniz hakkında doktorunuzla veya sağlık hizmeti sağlayıcınızla görüşmenizi tavsiye ederiz.
               </p>
 
-              <h2 className="text-2xl font-semibold mb-6">Kayakçılar için En Önemli 7 Güvenlik Kuralı</h2>
+              <h2 className="text-2xl font-semibold mb-6">Kayakçılar İçin En Önemli 7 Güvenlik Kuralı</h2>
               <p className="mb-6 text-lg leading-relaxed">
                 Kayakçılar ve diğer kış sporlarıyla uğraşanların yanı sıra, kayak merkezinde konaklayanların ve günübirlik ziyaretçilerin sağduyularını ve kişisel farkındalıklarını artırabilecek en önemli 7 güvenlik kuralını sizler için derledik. Bu 7 güvenlik kuralını “Sorumluluk Yasası” olarak da isimlendirebiliriz.
               </p>

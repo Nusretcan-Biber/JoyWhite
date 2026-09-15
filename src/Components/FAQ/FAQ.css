@@ -15,7 +15,7 @@
 
 .section-kicker {
   margin-bottom: 0.75rem;
-  color: #2563eb;
+  color: var(--primary-color);
   font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.12em;

@@ -94,7 +94,7 @@ const FAQ = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="faq-section" aria-labelledby="faq-title">
+    <section className="faq-section" id="about" aria-labelledby="faq-title">
       <div className="faq-section__inner">
         <ScrollAnimation animateIn="fadeInUp" animateOnce={false}>
           <div className="faq-section__intro">

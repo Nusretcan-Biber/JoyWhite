@@ -9,15 +9,12 @@ import { FooterComponent } from "../../Components/Footer/FooterComponent";
 import PhotoHeroSection from "../../Components/HeroSection/PhotoHeroSection";
 import emailjs from "@emailjs/browser";
 import { toast } from "react-hot-toast";
+import { PHONE_DISPLAY, PHONE_TEL_HREF, buildWhatsappLink } from "../../config/contact";
 
 
 const Contact = () => {
 
-  const whatsappMessage = `Merhaba, JoyWhite Kayak Kulübü hakkında bilgi almak istiyorum.`;
-
-  const whatsappLink = `https://api.whatsapp.com/send?phone=905056460234&text=${encodeURIComponent(
-    whatsappMessage
-  )}`;
+  const whatsappLink = buildWhatsappLink('Merhaba, JoyWhite Kayak Kulübü hakkında bilgi almak istiyorum.');
 
   const instagramLink = `https://www.instagram.com/joywhite365/`;
 
@@ -131,19 +128,19 @@ const Contact = () => {
               <div className="contact-header">
                 <h1 className="contact-title">İletişim Bilgileri</h1>
                 <div className="flex">
-                  <span className="inline-block w-40 h-1 bg-blue-500 rounded-full"></span>
-                  <span className="inline-block w-3 h-1 mx-1 bg-blue-500 rounded-full"></span>
-                  <span className="inline-block w-1 h-1 bg-blue-500 rounded-full"></span>
+                  <span className="inline-block w-40 h-1 bg-logoBlue rounded-full"></span>
+                  <span className="inline-block w-3 h-1 mx-1 bg-logoBlue rounded-full"></span>
+                  <span className="inline-block w-1 h-1 bg-logoBlue rounded-full"></span>
                 </div>
               </div>
               <div className="contact-items">
                 <div className="contact-item">
                   <FontAwesomeIcon icon={faPhone} className="contact-icon" />
-                  <a href="tel:+905056460234" className="contact-text" rel="noreferrer">+90 537 778 57 81</a>
+                  <a href={PHONE_TEL_HREF} className="contact-text" rel="noreferrer">{PHONE_DISPLAY}</a>
                 </div>
                 <div className="contact-item">
                   <FontAwesomeIcon icon={faWhatsapp} className="contact-icon" />
-                  <a href={whatsappLink} target="_blank" className="contact-text" rel="noreferrer">+90 537 778 57 81</a>
+                  <a href={whatsappLink} target="_blank" className="contact-text" rel="noreferrer">{PHONE_DISPLAY}</a>
                 </div>
                 <div className="contact-item">
                   <FontAwesomeIcon icon={faInstagram} className="contact-icon" />
@@ -168,9 +165,9 @@ const Contact = () => {
               <div className="contact-header">
                 <h1 className="contact-title">Bize Ulaşın</h1>
                 <div className="flex">
-                  <span className="inline-block w-40 h-1 bg-blue-500 rounded-full"></span>
-                  <span className="inline-block w-3 h-1 mx-1 bg-blue-500 rounded-full"></span>
-                  <span className="inline-block w-1 h-1 bg-blue-500 rounded-full"></span>
+                  <span className="inline-block w-40 h-1 bg-logoBlue rounded-full"></span>
+                  <span className="inline-block w-3 h-1 mx-1 bg-logoBlue rounded-full"></span>
+                  <span className="inline-block w-1 h-1 bg-logoBlue rounded-full"></span>
                 </div>
               </div>
               <form className="contact-form" ref={formRef} onSubmit={sendEmail}>
