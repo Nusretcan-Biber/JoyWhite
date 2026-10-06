@@ -176,12 +176,6 @@
     transition: all 0.3s ease;
 }
 
-.hero-reservation-btn svg {
-    color: #25D366;
-    font-size: 1.15rem;
-    transition: color 0.3s ease;
-}
-
 .hero-reservation-btn:hover {
     background-color: var(--secondary-color);
     border-color: var(--secondary-color);
