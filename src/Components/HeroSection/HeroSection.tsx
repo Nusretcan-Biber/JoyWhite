@@ -52,7 +52,7 @@ const HeroSection = () => {
 
             <div className="container h-full mx-auto flex items-center justify-center relative z-10 px-8 md:px-20">
               <div className="hero-content">
-                  <p className="hero-subtitle">Ski & Snowboard</p>
+                  <p className="hero-subtitle">SKI &amp; SNOWBOARD</p>
                   <h2 className="hero-title">Joy White Kayak Kulübü</h2>
                   <p className="hero-title transparent-text">Bir Kış Masalı</p>
 

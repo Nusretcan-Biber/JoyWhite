@@ -164,22 +164,19 @@
     gap: 0.65rem;
     padding: 0.85rem 1.75rem;
     border-radius: 999px;
-    background-color: rgba(245, 252, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border: 1.5px solid rgba(245, 252, 255, 0.6);
-    color: var(--secondary-color);
+    background-color: var(--secondary-color);
+    border: 1.5px solid var(--secondary-color);
+    color: var(--primary-color);
     font-size: 0.85rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.04em;
     white-space: nowrap;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
     transition: all 0.3s ease;
 }
 
 .hero-reservation-btn:hover {
-    background-color: var(--secondary-color);
-    border-color: var(--secondary-color);
-    color: var(--primary-color);
     transform: translateY(-3px);
     box-shadow: 0 14px 30px rgba(0, 0, 0, 0.25);
 }
