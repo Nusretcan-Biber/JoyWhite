@@ -1,27 +1,32 @@
 import React, { useMemo, useState } from "react";
-import { campsData } from "../data/dummydata";
+import { Link } from "react-router-dom";
+import { campsData, campsDataByLocation, campLocations } from "../data/dummydata";
 import Card from "../Card/Card";
 import "./CampsComponent.css";
 
 interface CampsComponentProps {
   showFilter?: boolean;
+  locationKey?: "sarikamis" | "ergan";
 }
 
 const getMonth = (beginDate: string) => beginDate.trim().split(" ").pop() as string;
 
-const CampsComponent = ({ showFilter = false }: CampsComponentProps) => {
+const CampsComponent = ({ showFilter = false, locationKey }: CampsComponentProps) => {
+  const baseCamps = locationKey ? campsDataByLocation[locationKey] : campsData;
+  const activeLocation = locationKey ? campLocations.find((loc) => loc.key === locationKey) : undefined;
+
   const months = useMemo(() => {
     const seen = new Set<string>();
-    campsData.forEach((camp) => seen.add(getMonth(camp.BeginDate)));
+    baseCamps.forEach((camp) => seen.add(getMonth(camp.BeginDate)));
     return Array.from(seen);
-  }, []);
+  }, [baseCamps]);
 
   const [selectedMonth, setSelectedMonth] = useState<string>("Tümü");
 
   const visibleCamps = useMemo(() => {
-    if (!showFilter || selectedMonth === "Tümü") return campsData;
-    return campsData.filter((camp) => getMonth(camp.BeginDate) === selectedMonth);
-  }, [showFilter, selectedMonth]);
+    if (!showFilter || selectedMonth === "Tümü") return baseCamps;
+    return baseCamps.filter((camp) => getMonth(camp.BeginDate) === selectedMonth);
+  }, [baseCamps, showFilter, selectedMonth]);
 
   return (
     <div id="camps">
@@ -29,7 +34,7 @@ const CampsComponent = ({ showFilter = false }: CampsComponentProps) => {
       <section className="bg-white py-12">
         <div className="container px-6 py-10 mx-auto">
           <h2 className="section-heading-lg text-center capitalize">
-            Eğitimlerimiz
+            {activeLocation ? `${activeLocation.name} Kamp Tarihleri` : "Kamp Tarihleri"}
           </h2>
           <div className="flex justify-center mx-auto mt-6">
             <span className="inline-block w-40 h-1 bg-logoBlue rounded-full"></span>
@@ -38,14 +43,18 @@ const CampsComponent = ({ showFilter = false }: CampsComponentProps) => {
           </div>
 
           <p className="mt-10 text-center text-gray-500">
-            Çocuklarınız için özel olarak tasarlanmış kayak eğitimlerimizde,
-            profesyonel eğitmenler eşliğinde güvenli ve eğlenceli bir öğrenme
-            deneyimi sunuyoruz. Kayak becerilerini geliştirmek ve kış
-            sporlarının tadını çıkarmak için mükemmel bir fırsat! Hem yeni
-            başlayanlar hem de deneyimli kayakçılar için çeşitli
-            programlarımızla, çocuklarınızın kayak keyfini yaşamasını
-            sağlıyoruz.
+            {activeLocation
+              ? activeLocation.intro
+              : "Çocuklarınız için özel olarak tasarlanmış kayak eğitimlerimizde, profesyonel eğitmenler eşliğinde güvenli ve eğlenceli bir öğrenme deneyimi sunuyoruz. Kayak becerilerini geliştirmek ve kış sporlarının tadını çıkarmak için mükemmel bir fırsat! Hem yeni başlayanlar hem de deneyimli kayakçılar için çeşitli programlarımızla, çocuklarınızın kayak keyfini yaşamasını sağlıyoruz."}
           </p>
+
+          {activeLocation && (
+            <p className="mt-3 text-center">
+              <Link to="/Trainings" className="text-PrimaryColor font-semibold hover:underline">
+                Tüm kamp bölgelerini gör →
+              </Link>
+            </p>
+          )}
 
           {showFilter && (
             <div className="camps-filter" role="group" aria-label="Aya göre filtrele">

@@ -2,7 +2,7 @@ import React from "react";
 import { NavbarComponent } from "../../Components/Navbar/NavbarComponent";
 import { FooterComponent } from "../../Components/Footer/FooterComponent";
 import PhotoHeroSection from "../../Components/HeroSection/PhotoHeroSection";
-import CampsComponent from "../../Components/Camps/CampsComponent";
+import CampLocationSelect from "../../Components/CampLocationSelect/CampLocationSelect";
 import { InstaSection } from "../../Components/InstaSection/InstaSection";
 
 const Camps = () => {
@@ -11,9 +11,12 @@ const Camps = () => {
       <div className="h-full min-h-screen ">
         <NavbarComponent />
 
-        <PhotoHeroSection sectionName="Eğitimlerimiz" />
+        <PhotoHeroSection sectionName="Kamp Tarihleri" />
 
-        <CampsComponent showFilter />
+        <CampLocationSelect
+          title="Hangi Kamp Bölgesi?"
+          intro="Kamp tarihlerini görmek için eğitim vermekte olduğumuz bölgelerden birini seçin."
+        />
 
         <InstaSection />
 

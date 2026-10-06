@@ -5,7 +5,7 @@ export const about = [
   },
 ];
 
-export const campsData = [
+const campSchedule = [
   {
     id: 1,
     cover: "/images/camps/kampbir.jpg",
@@ -23,7 +23,7 @@ export const campsData = [
       ],
     },
     description:
-      "Kışın büyüsünü keşfetmek için JoyWhite Sarıkamış Kayak Eğitimi'ne katılın! Profesyonel kayak eğitmenlerimiz eşliğinde, çocuklarınız güvenli bir ortamda kayak öğrenirken, eğlenceli aktivitelerle dolu bir tatil geçirecekler.",
+      "Kışın büyüsünü keşfetmek için JoyWhite Kayak Eğitimi'ne katılın! Profesyonel kayak eğitmenlerimiz eşliğinde, çocuklarınız güvenli bir ortamda kayak öğrenirken, eğlenceli aktivitelerle dolu bir tatil geçirecekler.",
   },
   {
     id: 2,
@@ -42,7 +42,7 @@ export const campsData = [
       ],
     },
     description:
-      "Çocuklarınızın kış tatilini unutulmaz kılmak için JoyWhite Sarıkamış Kayak Eğitimi'ne davet ediyoruz! Kayak dersleri, oyunlar ve doğa yürüyüşleri ile dolu bu eğitim, çocuklarınızın hem öğrenmesini hem de eğlenmesini sağlayacak.",
+      "Çocuklarınızın kış tatilini unutulmaz kılmak için JoyWhite Kayak Eğitimi'ne davet ediyoruz! Kayak dersleri, oyunlar ve doğa yürüyüşleri ile dolu bu eğitim, çocuklarınızın hem öğrenmesini hem de eğlenmesini sağlayacak.",
   },
   {
     id: 3,
@@ -62,7 +62,7 @@ export const campsData = [
       ],
     },
     description:
-      "Yılbaşı hafta sonunu Sarıkamış'ın karlarında geçirin! Çocuklarınız güvenli bir ortamda kayak yaparken, yeni yıla eğlenceli aktivitelerle dolu özel bir kamp deneyimiyle merhaba diyecek.",
+      "Yılbaşı hafta sonunu karların arasında geçirin! Çocuklarınız güvenli bir ortamda kayak yaparken, yeni yıla eğlenceli aktivitelerle dolu özel bir kamp deneyimiyle merhaba diyecek.",
   },
   {
     id: 4,
@@ -81,7 +81,7 @@ export const campsData = [
       ],
     },
     description:
-      "JoyWhite Sarıkamış Kayak Eğitimi, çocuklarınızın kış tatilini eğlenceli ve öğretici bir deneyime dönüştürüyor! Karlarla dolu bu eğitim, doğa ile iç içe, harika anılar biriktirecekleri bir fırsat sunuyor.",
+      "JoyWhite Kayak Eğitimi, çocuklarınızın kış tatilini eğlenceli ve öğretici bir deneyime dönüştürüyor! Karlarla dolu bu eğitim, doğa ile iç içe, harika anılar biriktirecekleri bir fırsat sunuyor.",
   },
   {
     id: 5,
@@ -121,7 +121,7 @@ export const campsData = [
       ],
     },
     description:
-      "Sömestr tatiline özel 4 günlük kamp! Çocuklarınız, uzman eğitmenlerimiz eşliğinde kayak becerilerini geliştirirken, tatilin keyfini Sarıkamış'ın doğasında çıkaracak.",
+      "Sömestr tatiline özel 4 günlük kamp! Çocuklarınız, uzman eğitmenlerimiz eşliğinde kayak becerilerini geliştirirken, tatilin keyfini eşsiz doğada çıkaracak.",
   },
   {
     id: 7,
@@ -220,7 +220,7 @@ export const campsData = [
       ],
     },
     description:
-      "JoyWhite Sarıkamış Kayak Eğitimi, kışın sunduğu eğlenceleri çocuklarınız için özel bir deneyime dönüştürüyor! Uzman ekibimiz, güvenliği ön planda tutarak kayak becerilerini geliştirmelerine yardımcı olacak.",
+      "JoyWhite Kayak Eğitimi, kışın sunduğu eğlenceleri çocuklarınız için özel bir deneyime dönüştürüyor! Uzman ekibimiz, güvenliği ön planda tutarak kayak becerilerini geliştirmelerine yardımcı olacak.",
   },
   {
     id: 12,
@@ -239,7 +239,7 @@ export const campsData = [
       ],
     },
     description:
-      "Kış tatilinizi daha eğlenceli hale getirmek için JoyWhite Sarıkamış Kayak Eğitimi'ne katılın! Profesyonel eğitmenlerimiz eşliğinde çocuklarınız, kayak yapmanın keyfini güvenli bir ortamda çıkaracak.",
+      "Kış tatilinizi daha eğlenceli hale getirmek için JoyWhite Kayak Eğitimi'ne katılın! Profesyonel eğitmenlerimiz eşliğinde çocuklarınız, kayak yapmanın keyfini güvenli bir ortamda çıkaracak.",
   },
   {
     id: 13,
@@ -279,7 +279,7 @@ export const campsData = [
       ],
     },
     description:
-      "Ara tatil ve Ramazan Bayramı'na özel ilk kamp dönemi. Bayram tatilini Sarıkamış'ın karlarında, kayak ve eğlenceli aktivitelerle dolu geçirin.",
+      "Ara tatil ve Ramazan Bayramı'na özel ilk kamp dönemi. Bayram tatilini karların arasında, kayak ve eğlenceli aktivitelerle dolu geçirin.",
   },
   {
     id: 15,
@@ -339,9 +339,60 @@ export const campsData = [
       ],
     },
     description:
-      "1 Nisan öncesi sezonun son kamp dönemi! Kış sezonunu Sarıkamış'ta kayak, eğlence ve unutulmaz anılarla kapatın.",
+      "1 Nisan öncesi sezonun son kamp dönemi! Kış sezonunu kayak, eğlence ve unutulmaz anılarla kapatın.",
   },
 ];
+
+export const campLocations = [
+  {
+    key: "sarikamis",
+    name: "Sarıkamış",
+    fullLocation: "Sarıkamış/Kars",
+    cover: "/images/staticImages/hero-2.jpg",
+    intro:
+      "Kars'ın saklı cenneti Sarıkamış'ta, kristal kar yapısına sahip pistlerde çocuklarınız için profesyonel kayak eğitimi.",
+    crystalSnowBlurb:
+      "Sarıkamış, Alpler'de görülen kristal kar yapısına sahip Türkiye'deki nadir kayak merkezlerinden biridir.",
+    pisteInfoTitle: "Sarıkamış Pistleri Hakkında",
+    pisteInfo: [
+      "Kars-Sarıkamış; Bayraktepe Kayak Merkezi ve pistleri bölgeye özgü sarıçam ormanlarının içindedir.",
+      "Rakımı 2200-2600 metre yükseklikteki kayak merkezi Kars hava alanına 40 dakikadır.",
+      "Sarıçamlar arasındaki pistlerde 1,5 metreye ulaşan kar kalınlığı bölgede uzun bir sezonda kayak yapma olanağı sunmaktadır.",
+      "Özellikle “kristal” şeklinde yağan kar Alplerdeki pudra kar niteliği ile kayak sevenlerin tutkusu haline gelmiştir.",
+    ],
+  },
+  {
+    key: "ergan",
+    name: "Ergan Dağı",
+    fullLocation: "Ergan Dağı/Erzincan",
+    cover: "/images/staticImages/hero-4.jpg",
+    intro:
+      "Erzincan'ın gözbebeği Ergan Dağı'nda, geniş pistler ve eşsiz doğayla çocuklarınız için profesyonel kayak eğitimi.",
+    crystalSnowBlurb:
+      "Ergan Dağı, geniş pistleri ve bol kar örtüsüyle Doğu Anadolu'nun öne çıkan kayak merkezlerinden biridir.",
+    pisteInfoTitle: "Ergan Dağı Pistleri Hakkında",
+    pisteInfo: [
+      "Erzincan Ergan Dağı Kayak Merkezi, geniş pistleriyle her seviyeden kayakçıya uygun imkanlar sunar.",
+      "Bölge, kış sezonu boyunca kalıcı kar örtüsüne sahip olup kayak sezonunu uzun tutar.",
+      "Doğal yapısıyla çocuklar için güvenli ve ferah bir eğitim ortamı sağlar.",
+      "Eğitmen kadromuz aynı özenle Ergan Dağı'ndaki kamplarımızda da görev almaktadır.",
+    ],
+  },
+];
+
+export const campsDataByLocation = Object.fromEntries(
+  campLocations.map((location) => [
+    location.key,
+    campSchedule.map((camp) => ({
+      ...camp,
+      id: location.key === "sarikamis" ? camp.id : camp.id + 100,
+      Location: location.fullLocation,
+      locationKey: location.key,
+    })),
+  ])
+);
+
+export const campsData = Object.values(campsDataByLocation).flat();
 
 export const blog = [
   {

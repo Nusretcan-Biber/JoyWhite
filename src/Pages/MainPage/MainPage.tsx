@@ -4,7 +4,7 @@ import { NavbarComponent } from '../../Components/Navbar/NavbarComponent'
 import Services from '../../Components/Services/Services'
 import Contact from '../../Components/Contact/Contact'
 import { FooterComponent } from '../../Components/Footer/FooterComponent'
-import CampsComponent from '../../Components/Camps/CampsComponent'
+import CampLocationSelect from '../../Components/CampLocationSelect/CampLocationSelect'
 import { InstaSection } from '../../Components/InstaSection/InstaSection'
 import FAQ from '../../Components/FAQ/FAQ'
 import AboutVision from '../../Components/AboutVision/AboutVision'
@@ -18,13 +18,13 @@ const MainPage = () => {
     <div className="h-full min-h-screen ">
         <NavbarComponent/>
         <HeroSection/>
+        <CampLocationSelect/>
         <FAQ/>
         <AboutVision/>
         <WinterCampContent/>
         <KidsCampContent/>
         <DailySchedule/>
         <Contact/>
-        <CampsComponent/>
         <Services/>
         <InstaSection/>
         <FooterComponent/>

@@ -2,6 +2,7 @@ import React from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import MainPage from './Pages/MainPage/MainPage';
 import Camps from './Pages/Camps/Camps';
+import CampsByLocation from './Pages/Camps/CampsByLocation';
 import CampDetail from './Components/CampDetail/CampDetail';
 import Gallery from './Pages/Gallery/Gallery';
 import WhatsSki from './Pages/Blogs/WhatsSki';
@@ -37,6 +38,7 @@ function App() {
         <Route path="/404" element={<NotFoundPage />} />
         <Route path="/" element={<MainPage />} />
         <Route path="/Trainings" element={<Camps />} />
+        <Route path="/Trainings/:location" element={<CampsByLocation />} />
         <Route path="/Training/:id" element={<CampDetail />} />
         <Route path="/Gallery" element={<Gallery />} />
         <Route path="/Contact" element={<ContactPage />} />

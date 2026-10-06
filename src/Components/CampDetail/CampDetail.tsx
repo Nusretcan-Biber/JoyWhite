@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { campsData } from "../data/dummydata"; // campsData'yı import ettik
+import { campsData, campLocations } from "../data/dummydata"; // campsData'yı import ettik
 import { NavbarComponent } from "../Navbar/NavbarComponent";
 import { FooterComponent } from "../Footer/FooterComponent";
 import { Tabs, Table, Card, ListGroup } from "flowbite-react";
@@ -22,6 +22,9 @@ const CampDetail = () => {
   if (!camp) {
     return <div className="text-center">Eğitim bilgisi bulunamadı.</div>;
   }
+
+  const activeLocation =
+    campLocations.find((loc) => loc.key === camp.locationKey) ?? campLocations[0];
 
   // WhatsApp linkini oluştur
   const whatsappLink = buildWhatsappLink(
@@ -173,7 +176,7 @@ const CampDetail = () => {
                           <div>
                             <h3 className="text-lg font-semibold">Kristal Kar Kalitesi</h3>
                             <p>
-                              Sarıkamış, Alpler’de görülen kristal kar yapısına sahip Türkiye’deki nadir kayak merkezlerinden biridir.
+                              {activeLocation.crystalSnowBlurb}
                             </p>
                           </div>
                         </div>
@@ -276,22 +279,13 @@ const CampDetail = () => {
                     </ListGroup>
                   </Card>
 
-                  {/* Sarıkamış Pistleri Kartı */}
+                  {/* Konuma özel pist kartı */}
                   <Card className="mt-4">
-                    <h2 className="text-PrimaryColor font-bold text-lg">Sarıkamış Pistleri Hakkında</h2>
+                    <h2 className="text-PrimaryColor font-bold text-lg">{activeLocation.pisteInfoTitle}</h2>
                     <ListGroup>
-                      <ListGroup.Item>
-                        Kars-Sarıkamış; Bayraktepe Kayak Merkezi ve pistleri bölgeye özgü sarıçam ormanlarının içindedir.
-                      </ListGroup.Item>
-                      <ListGroup.Item>
-                        Rakımı 2200-2600 metre yükseklikteki kayak merkezi Kars hava alanına 40 dakikadır.
-                      </ListGroup.Item>
-                      <ListGroup.Item>
-                        Sarıçamlar arasındaki pistlerde 1,5 metreye ulaşan kar kalınlığı bölgede uzun bir sezonda kayak yapma olanağı sunmaktadır.
-                      </ListGroup.Item>
-                      <ListGroup.Item>
-                        <strong>Özellikle “kristal” şeklinde yağan kar Alplerdeki pudra kar niteliği ile kayak sevenlerin tutkusu haline gelmiştir.</strong>
-                      </ListGroup.Item>
+                      {activeLocation.pisteInfo.map((info) => (
+                        <ListGroup.Item key={info}>{info}</ListGroup.Item>
+                      ))}
                     </ListGroup>
                   </Card>
                 </Tabs.Item>

@@ -19,7 +19,7 @@ const HeroSection = () => {
 
   const slides = [
     { image: "/images/staticImages/hero-4.jpg", title: "Uzman antrenörler eşliğinde kayak eğitimi" },
-    { image: "/images/staticImages/hero-2.jpg", title: "Sarıkamış'ta unutulmaz bir kış deneyimi" },
+    { image: "/images/staticImages/hero-2.jpg", title: "Dağların zirvesinde unutulmaz bir kış deneyimi" },
     { image: "/images/staticImages/photo-hero.jpg", title: "Eğlenceli ve güvenli kış sporları" },
     { image: "/images/staticImages/parallax-1.jpg", title: "JoyWhite kayak kampı" },
   ];
@@ -53,7 +53,7 @@ const HeroSection = () => {
               <div className="hero-content">
                   <p className="hero-subtitle">Ski & Snowboard</p>
                   <h2 className="hero-title">Joy White Kayak Kulübü</h2>
-                  <p className="hero-title transparent-text">Sarıkamış&apos;ta Bir Kış Masalı</p>
+                  <p className="hero-title transparent-text">Bir Kış Masalı</p>
               </div>
 
             </div>

@@ -86,7 +86,7 @@ export function NavbarComponent({ useScrolled = false }) {
             className={`text-md md:text-lg !transition-all !duration-100 hover:!text-Gri ${isScrolled || isMenuOpen ? "text-black" : "text-white"
               }`}
           >
-            Eğitimlerimiz
+            Kamp Tarihleri
           </Navbar.Link>
           <Navbar.Link
             href="/Biz-Kimiz"
