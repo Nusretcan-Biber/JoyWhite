@@ -46,7 +46,7 @@ export function FooterComponent() {
               <img src="/images/staticImages/joywhite-logo-white.png" alt="JoyWhite Kayak Kulübü" />
             </Link>
             <p className="footer__tagline">
-              Sarıkamış'ta çocuklara güvenli, eğlenceli ve yaratıcı bir kış sporları deneyimi sunuyoruz.
+              Çocuklara güvenli, eğlenceli ve yaratıcı bir kış sporları deneyimi sunuyoruz.
             </p>
             <ul className="footer__social">
               {socialLinks.map((item) => (
@@ -86,7 +86,7 @@ export function FooterComponent() {
             © {new Date().getFullYear()} JoyWhite Kayak Kulübü. Tüm hakları saklıdır.
           </p>
           <p className="footer__agency">
-            <strong>Pavone Travel Agency</strong>, Joy White Kayak Kulübünün resmî seyahat acentesidir · TÜRSAB Belge No: 18202
+            <strong>Pavone Travel Agency</strong>, Joy White Kayak Kulübünün resmî seyahat acentasıdır · TÜRSAB Belge No: 18202
             {" "}
             <a href="https://pavonemice.com/" target="_blank" rel="noreferrer">
               pavonemice.com

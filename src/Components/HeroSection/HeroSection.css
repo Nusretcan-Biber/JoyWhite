@@ -150,6 +150,61 @@
     -webkit-text-stroke: 1.5px var(--secondary-color);
 }
 
+.hero-reservation-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.hero-reservation-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.85rem 1.75rem;
+    border-radius: 999px;
+    background-color: rgba(245, 252, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1.5px solid rgba(245, 252, 255, 0.6);
+    color: var(--secondary-color);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+}
+
+.hero-reservation-btn svg {
+    color: #25D366;
+    font-size: 1.15rem;
+    transition: color 0.3s ease;
+}
+
+.hero-reservation-btn:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    color: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.25);
+}
+
+@media screen and (max-width: 480px) {
+    .hero-reservation-group {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.75rem;
+    }
+
+    .hero-reservation-btn {
+        justify-content: center;
+        width: 100%;
+        font-size: 0.85rem;
+        padding: 0.8rem 1.25rem;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .hero-bg-title {
         font-size: 4rem;

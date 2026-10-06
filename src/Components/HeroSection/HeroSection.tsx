@@ -1,6 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft, faChevronRight, faAnglesDown } from "@fortawesome/free-solid-svg-icons";
+import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-fade";
@@ -9,6 +10,7 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import "./HeroSection.css";
 import { Autoplay, Navigation, Pagination, EffectFade } from 'swiper/modules';
+import { buildWhatsappLink } from "../../config/contact";
 
 const HeroSection = () => {
 
@@ -16,6 +18,13 @@ const HeroSection = () => {
     const camps = document.getElementById("about");
     camps?.scrollIntoView({ behavior: "smooth" });
   };
+
+  const sarikamisWhatsappLink = buildWhatsappLink(
+    "Merhaba, Sarıkamış kampı için rezervasyon yapmak istiyorum."
+  );
+  const erganWhatsappLink = buildWhatsappLink(
+    "Merhaba, Ergan Dağı kampı için rezervasyon yapmak istiyorum."
+  );
 
   const slides = [
     { image: "/images/staticImages/hero-4.jpg", title: "Uzman antrenörler eşliğinde kayak eğitimi" },
@@ -54,6 +63,27 @@ const HeroSection = () => {
                   <p className="hero-subtitle">Ski & Snowboard</p>
                   <h2 className="hero-title">Joy White Kayak Kulübü</h2>
                   <p className="hero-title transparent-text">Bir Kış Masalı</p>
+
+                  <div className="hero-reservation-group">
+                    <a
+                      href={sarikamisWhatsappLink}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="hero-reservation-btn"
+                    >
+                      <FontAwesomeIcon icon={faWhatsapp} />
+                      Sarıkamış İçin Rezervasyon Yap
+                    </a>
+                    <a
+                      href={erganWhatsappLink}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="hero-reservation-btn"
+                    >
+                      <FontAwesomeIcon icon={faWhatsapp} />
+                      Ergan İçin Rezervasyon Yap
+                    </a>
+                  </div>
               </div>
 
             </div>
