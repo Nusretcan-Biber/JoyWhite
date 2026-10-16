@@ -15,11 +15,10 @@ const campSchedule = [
     EndDate: "20 Aralık 2026",
     Price: {
       adultChildCombination: [
-        { type: "1 Yetişkin 1 Çocuk" },
-        { type: "1 Yetişkin 2 Çocuk" },
-        { type: "2 Yetişkin 1 Çocuk" },
-        { type: "2 Yetişkin 2 Çocuk" },
-        { type: "3 Yetişkin 1 Çocuk" },
+        { type: "1 Yetişkin 1 Çocuk", price: "78.180,00 ₺" },
+        { type: "1 Yetişkin 2 Çocuk", price: "117.048,00 ₺" },
+        { type: "2 Yetişkin 1 Çocuk", price: "91.284,00 ₺" },
+        { type: "2 Yetişkin 2 Çocuk", price: "138.888,00 ₺" },
       ],
     },
     description:
@@ -34,11 +33,10 @@ const campSchedule = [
     EndDate: "27 Aralık 2026",
     Price: {
       adultChildCombination: [
-        { type: "1 Yetişkin 1 Çocuk" },
-        { type: "1 Yetişkin 2 Çocuk" },
-        { type: "2 Yetişkin 1 Çocuk" },
-        { type: "2 Yetişkin 2 Çocuk" },
-        { type: "3 Yetişkin 1 Çocuk" },
+        { type: "1 Yetişkin 1 Çocuk", price: "81.540,00 ₺" },
+        { type: "1 Yetişkin 2 Çocuk", price: "130.152,00 ₺" },
+        { type: "2 Yetişkin 1 Çocuk", price: "95.652,00 ₺" },
+        { type: "2 Yetişkin 2 Çocuk", price: "144.264,00 ₺" },
       ],
     },
     description:
@@ -54,11 +52,10 @@ const campSchedule = [
     EndDate: "3 Ocak 2027",
     Price: {
       adultChildCombination: [
-        { type: "1 Yetişkin 1 Çocuk" },
-        { type: "1 Yetişkin 2 Çocuk" },
-        { type: "2 Yetişkin 1 Çocuk" },
-        { type: "2 Yetişkin 2 Çocuk" },
-        { type: "3 Yetişkin 1 Çocuk" },
+        { type: "1 Yetişkin 1 Çocuk", price: "92.964,00 ₺" },
+        { type: "1 Yetişkin 2 Çocuk", price: "145.003,20 ₺" },
+        { type: "2 Yetişkin 1 Çocuk", price: "110.503,20 ₺" },
+        { type: "2 Yetişkin 2 Çocuk", price: "162.542,40 ₺" },
       ],
     },
     description:
@@ -73,11 +70,10 @@ const campSchedule = [
     EndDate: "10 Ocak 2027",
     Price: {
       adultChildCombination: [
-        { type: "1 Yetişkin 1 Çocuk" },
-        { type: "1 Yetişkin 2 Çocuk" },
-        { type: "2 Yetişkin 1 Çocuk" },
-        { type: "2 Yetişkin 2 Çocuk" },
-        { type: "3 Yetişkin 1 Çocuk" },
+        { type: "1 Yetişkin 1 Çocuk", price: "85.572,00 ₺" },
+        { type: "1 Yetişkin 2 Çocuk", price: "135.393,60 ₺" },
+        { type: "2 Yetişkin 1 Çocuk", price: "100.893,60 ₺" },
+        { type: "2 Yetişkin 2 Çocuk", price: "150.715,20 ₺" },
       ],
     },
     description:
@@ -93,11 +89,10 @@ const campSchedule = [
     EndDate: "24 Ocak 2027",
     Price: {
       adultChildCombination: [
-        { type: "1 Yetişkin 1 Çocuk" },
-        { type: "1 Yetişkin 2 Çocuk" },
-        { type: "2 Yetişkin 1 Çocuk" },
-        { type: "2 Yetişkin 2 Çocuk" },
-        { type: "3 Yetişkin 1 Çocuk" },
+        { type: "1 Yetişkin 1 Çocuk", price: "85.572,00 ₺" },
+        { type: "1 Yetişkin 2 Çocuk", price: "135.393,60 ₺" },
+        { type: "2 Yetişkin 1 Çocuk", price: "100.893,60 ₺" },
+        { type: "2 Yetişkin 2 Çocuk", price: "150.715,20 ₺" },
       ],
     },
     description:
@@ -113,11 +108,10 @@ const campSchedule = [
     EndDate: "27 Ocak 2027",
     Price: {
       adultChildCombination: [
-        { type: "1 Yetişkin 1 Çocuk" },
-        { type: "1 Yetişkin 2 Çocuk" },
-        { type: "2 Yetişkin 1 Çocuk" },
-        { type: "2 Yetişkin 2 Çocuk" },
-        { type: "3 Yetişkin 1 Çocuk" },
+        { type: "1 Yetişkin 1 Çocuk", price: "99.684,00 ₺" },
+        { type: "1 Yetişkin 2 Çocuk", price: "153.739,20 ₺" },
+        { type: "2 Yetişkin 1 Çocuk", price: "119.239,20 ₺" },
+        { type: "2 Yetişkin 2 Çocuk", price: "173.294,40 ₺" },
       ],
     },
     description:
@@ -133,11 +127,10 @@ const campSchedule = [
     EndDate: "31 Ocak 2027",
     Price: {
       adultChildCombination: [
-        { type: "1 Yetişkin 1 Çocuk" },
-        { type: "1 Yetişkin 2 Çocuk" },
-        { type: "2 Yetişkin 1 Çocuk" },
-        { type: "2 Yetişkin 2 Çocuk" },
-        { type: "3 Yetişkin 1 Çocuk" },
+        { type: "1 Yetişkin 1 Çocuk", price: "106.404,00 ₺" },
+        { type: "1 Yetişkin 2 Çocuk", price: "162.475,20 ₺" },
+        { type: "2 Yetişkin 1 Çocuk", price: "127.975,20 ₺" },
+        { type: "2 Yetişkin 2 Çocuk", price: "184.046,40 ₺" },
       ],
     },
     description:
@@ -153,11 +146,10 @@ const campSchedule = [
     EndDate: "3 Şubat 2027",
     Price: {
       adultChildCombination: [
-        { type: "1 Yetişkin 1 Çocuk" },
-        { type: "1 Yetişkin 2 Çocuk" },
-        { type: "2 Yetişkin 1 Çocuk" },
-        { type: "2 Yetişkin 2 Çocuk" },
-        { type: "3 Yetişkin 1 Çocuk" },
+        { type: "1 Yetişkin 1 Çocuk", price: "106.404,00 ₺" },
+        { type: "1 Yetişkin 2 Çocuk", price: "162.475,20 ₺" },
+        { type: "2 Yetişkin 1 Çocuk", price: "127.975,20 ₺" },
+        { type: "2 Yetişkin 2 Çocuk", price: "184.046,40 ₺" },
       ],
     },
     description:
@@ -173,11 +165,10 @@ const campSchedule = [
     EndDate: "7 Şubat 2027",
     Price: {
       adultChildCombination: [
-        { type: "1 Yetişkin 1 Çocuk" },
-        { type: "1 Yetişkin 2 Çocuk" },
-        { type: "2 Yetişkin 1 Çocuk" },
-        { type: "2 Yetişkin 2 Çocuk" },
-        { type: "3 Yetişkin 1 Çocuk" },
+        { type: "1 Yetişkin 1 Çocuk", price: "106.404,00 ₺" },
+        { type: "1 Yetişkin 2 Çocuk", price: "162.475,20 ₺" },
+        { type: "2 Yetişkin 1 Çocuk", price: "127.975,20 ₺" },
+        { type: "2 Yetişkin 2 Çocuk", price: "184.046,40 ₺" },
       ],
     },
     description:
@@ -193,11 +184,10 @@ const campSchedule = [
     EndDate: "14 Şubat 2027",
     Price: {
       adultChildCombination: [
-        { type: "1 Yetişkin 1 Çocuk" },
-        { type: "1 Yetişkin 2 Çocuk" },
-        { type: "2 Yetişkin 1 Çocuk" },
-        { type: "2 Yetişkin 2 Çocuk" },
-        { type: "3 Yetişkin 1 Çocuk" },
+        { type: "1 Yetişkin 1 Çocuk", price: "93.636,00 ₺" },
+        { type: "1 Yetişkin 2 Çocuk", price: "145.876,80 ₺" },
+        { type: "2 Yetişkin 1 Çocuk", price: "111.376,80 ₺" },
+        { type: "2 Yetişkin 2 Çocuk", price: "163.617,60 ₺" },
       ],
     },
     description:
@@ -212,11 +202,10 @@ const campSchedule = [
     EndDate: "21 Şubat 2027",
     Price: {
       adultChildCombination: [
-        { type: "1 Yetişkin 1 Çocuk" },
-        { type: "1 Yetişkin 2 Çocuk" },
-        { type: "2 Yetişkin 1 Çocuk" },
-        { type: "2 Yetişkin 2 Çocuk" },
-        { type: "3 Yetişkin 1 Çocuk" },
+        { type: "1 Yetişkin 1 Çocuk", price: "93.636,00 ₺" },
+        { type: "1 Yetişkin 2 Çocuk", price: "145.876,80 ₺" },
+        { type: "2 Yetişkin 1 Çocuk", price: "111.376,80 ₺" },
+        { type: "2 Yetişkin 2 Çocuk", price: "163.617,60 ₺" },
       ],
     },
     description:
@@ -231,11 +220,10 @@ const campSchedule = [
     EndDate: "28 Şubat 2027",
     Price: {
       adultChildCombination: [
-        { type: "1 Yetişkin 1 Çocuk" },
-        { type: "1 Yetişkin 2 Çocuk" },
-        { type: "2 Yetişkin 1 Çocuk" },
-        { type: "2 Yetişkin 2 Çocuk" },
-        { type: "3 Yetişkin 1 Çocuk" },
+        { type: "1 Yetişkin 1 Çocuk", price: "93.636,00 ₺" },
+        { type: "1 Yetişkin 2 Çocuk", price: "145.876,80 ₺" },
+        { type: "2 Yetişkin 1 Çocuk", price: "111.376,80 ₺" },
+        { type: "2 Yetişkin 2 Çocuk", price: "163.617,60 ₺" },
       ],
     },
     description:
@@ -251,11 +239,10 @@ const campSchedule = [
     EndDate: "7 Mart 2027",
     Price: {
       adultChildCombination: [
-        { type: "1 Yetişkin 1 Çocuk" },
-        { type: "1 Yetişkin 2 Çocuk" },
-        { type: "2 Yetişkin 1 Çocuk" },
-        { type: "2 Yetişkin 2 Çocuk" },
-        { type: "3 Yetişkin 1 Çocuk" },
+        { type: "1 Yetişkin 1 Çocuk", price: "93.636,00 ₺" },
+        { type: "1 Yetişkin 2 Çocuk", price: "145.876,80 ₺" },
+        { type: "2 Yetişkin 1 Çocuk", price: "111.376,80 ₺" },
+        { type: "2 Yetişkin 2 Çocuk", price: "163.617,60 ₺" },
       ],
     },
     description:
@@ -271,11 +258,10 @@ const campSchedule = [
     EndDate: "10 Mart 2027",
     Price: {
       adultChildCombination: [
-        { type: "1 Yetişkin 1 Çocuk" },
-        { type: "1 Yetişkin 2 Çocuk" },
-        { type: "2 Yetişkin 1 Çocuk" },
-        { type: "2 Yetişkin 2 Çocuk" },
-        { type: "3 Yetişkin 1 Çocuk" },
+        { type: "1 Yetişkin 1 Çocuk", price: "93.636,00 ₺" },
+        { type: "1 Yetişkin 2 Çocuk", price: "145.876,80 ₺" },
+        { type: "2 Yetişkin 1 Çocuk", price: "111.376,80 ₺" },
+        { type: "2 Yetişkin 2 Çocuk", price: "163.617,60 ₺" },
       ],
     },
     description:
@@ -291,11 +277,10 @@ const campSchedule = [
     EndDate: "14 Mart 2027",
     Price: {
       adultChildCombination: [
-        { type: "1 Yetişkin 1 Çocuk" },
-        { type: "1 Yetişkin 2 Çocuk" },
-        { type: "2 Yetişkin 1 Çocuk" },
-        { type: "2 Yetişkin 2 Çocuk" },
-        { type: "3 Yetişkin 1 Çocuk" },
+        { type: "1 Yetişkin 1 Çocuk", price: "96.324,00 ₺" },
+        { type: "1 Yetişkin 2 Çocuk", price: "149.371,20 ₺" },
+        { type: "2 Yetişkin 1 Çocuk", price: "114.871,20 ₺" },
+        { type: "2 Yetişkin 2 Çocuk", price: "167.918,40 ₺" },
       ],
     },
     description:
@@ -311,11 +296,10 @@ const campSchedule = [
     EndDate: "21 Mart 2027",
     Price: {
       adultChildCombination: [
-        { type: "1 Yetişkin 1 Çocuk" },
-        { type: "1 Yetişkin 2 Çocuk" },
-        { type: "2 Yetişkin 1 Çocuk" },
-        { type: "2 Yetişkin 2 Çocuk" },
-        { type: "3 Yetişkin 1 Çocuk" },
+        { type: "1 Yetişkin 1 Çocuk", price: "81.540,00 ₺" },
+        { type: "1 Yetişkin 2 Çocuk", price: "120.744,00 ₺" },
+        { type: "2 Yetişkin 1 Çocuk", price: "95.652,00 ₺" },
+        { type: "2 Yetişkin 2 Çocuk", price: "144.264,00 ₺" },
       ],
     },
     description:
@@ -331,11 +315,10 @@ const campSchedule = [
     EndDate: "28 Mart 2027",
     Price: {
       adultChildCombination: [
-        { type: "1 Yetişkin 1 Çocuk" },
-        { type: "1 Yetişkin 2 Çocuk" },
-        { type: "2 Yetişkin 1 Çocuk" },
-        { type: "2 Yetişkin 2 Çocuk" },
-        { type: "3 Yetişkin 1 Çocuk" },
+        { type: "1 Yetişkin 1 Çocuk", price: "81.540,00 ₺" },
+        { type: "1 Yetişkin 2 Çocuk", price: "120.744,00 ₺" },
+        { type: "2 Yetişkin 1 Çocuk", price: "95.652,00 ₺" },
+        { type: "2 Yetişkin 2 Çocuk", price: "144.264,00 ₺" },
       ],
     },
     description:

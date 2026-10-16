@@ -118,31 +118,17 @@ const CampDetail = () => {
                 <Table>
                   <Table.Head>
                     <Table.HeadCell>Katılımcı</Table.HeadCell>
-                    <Table.HeadCell>Fiyat &amp; Rezervasyon</Table.HeadCell>
+                    <Table.HeadCell>Fiyat</Table.HeadCell>
                   </Table.Head>
                   <Table.Body className="divide-y">
-                    {camp.Price.adultChildCombination.map((priceOption) => {
-                      const priceWhatsappLink = buildWhatsappLink(
-                        `Merhaba, ${camp.BeginDate} - ${camp.EndDate} tarihleri arasındaki ${camp.name} için ${priceOption.type} seçeneğiyle rezervasyon fiyatı almak istiyorum.`
-                      );
-
-                      return (
-                        <Table.Row key={priceOption.type}>
-                          <Table.Cell>{priceOption.type}</Table.Cell>
-                          <Table.Cell>
-                            <a
-                              href={priceWhatsappLink}
-                              target="_blank"
-                              rel="noreferrer"
-                              className="price-whatsapp-button"
-                            >
-                              <FontAwesomeIcon icon={faWhatsapp} className="price-whatsapp-icon" />
-                              <span>Rezervasyon Yap</span>
-                            </a>
-                          </Table.Cell>
-                        </Table.Row>
-                      );
-                    })}
+                    {camp.Price.adultChildCombination.map((priceOption) => (
+                      <Table.Row key={priceOption.type}>
+                        <Table.Cell>{priceOption.type}</Table.Cell>
+                        <Table.Cell>
+                          <span className="price-amount">{priceOption.price}</span>
+                        </Table.Cell>
+                      </Table.Row>
+                    ))}
                   </Table.Body>
                 </Table>
                 </ScrollAnimation>

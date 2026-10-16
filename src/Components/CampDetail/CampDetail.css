@@ -136,34 +136,11 @@ div[data-testid="table-element"] {
     opacity: 1;
 }
 
-.price-whatsapp-button {
-    display: inline-flex;
-    align-items: center;
-    gap: .5rem;
-    padding: .55rem 1.1rem;
-    border-radius: 50px;
-    background-color: #25D366;
-    color: #fff;
-    font-size: .85rem;
-    font-weight: 600;
+.price-amount {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--primary-color);
     white-space: nowrap;
-    text-decoration: none;
-    transition: all .3s;
-}
-
-.price-whatsapp-button:hover {
-    background-color: #1ebe5d;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 18px rgba(37, 211, 102, 0.4);
-}
-
-.price-whatsapp-icon {
-    font-size: 1.05rem;
-    transition: transform .3s;
-}
-
-.price-whatsapp-button:hover .price-whatsapp-icon {
-    transform: rotate(-8deg) scale(1.1);
 }
 
 @media (max-width: 768px) {
